@@ -1,0 +1,14 @@
+{
+  "name": "Kayoung Lee",
+  "email": "elain202@gmail.com",
+  "phone": "[REDACTED]",
+  "skills": ["iOS", "Swift", "visionOS", "AI", "Unity3D", "OpenGL", "Computer Vision"],
+  "socialLinks": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "youtube": [
+      { "label": "WWDC 2023", "url": "https://youtu.be/xtqS5JctUeA" },
+      { "label": "LINE Developer Vlog", "url": "https://youtu.be/LOmlBy3FSdo" }
+    ]
+  }
+}

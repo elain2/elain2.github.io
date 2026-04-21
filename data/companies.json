@@ -1,0 +1,50 @@
+{
+  "default": {
+    "greeting": "Hello, I'm",
+    "greetingKo": "안녕하세요, 저는",
+    "highlightSkills": [],
+    "featuredProjectIds": [],
+    "hideTimeline": false,
+    "customMessage": null
+  },
+  "apple": {
+    "greeting": "Hi Apple Team, I'm",
+    "greetingKo": "안녕하세요 Apple 팀, 저는",
+    "highlightSkills": ["iOS", "Swift", "visionOS"],
+    "featuredProjectIds": ["line-vision-pro", "line-ai-dev2", "line-voom-camera", "line-avatar", "hand-gesture-ar", "unity-2-5d-game"],
+    "hideTimeline": false,
+    "customMessage": "Passionate about creating innovative Apple platform experiences with 7+ years of iOS development."
+  },
+  "google": {
+    "greeting": "Hi Google Team, I'm",
+    "greetingKo": "안녕하세요 Google 팀, 저는",
+    "highlightSkills": ["AI", "Computer Vision", "iOS", "Swift"],
+    "featuredProjectIds": ["line-ai-dev2", "hand-gesture-ar", "line-vision-pro", "line-voom-camera", "east-asian-game-market", "roller-coaster-simulation"],
+    "hideTimeline": false,
+    "customMessage": "Experienced in AI integration and mobile development, eager to contribute to Google's innovative products."
+  },
+  "meta": {
+    "greeting": "Hi Meta Team, I'm",
+    "greetingKo": "안녕하세요 Meta 팀, 저는",
+    "highlightSkills": ["visionOS", "AR/VR", "Unity3D", "iOS"],
+    "featuredProjectIds": ["line-vision-pro", "safety-gray-ar", "unity-2-5d-game", "roller-coaster-simulation", "line-avatar", "hand-gesture-ar"],
+    "hideTimeline": false,
+    "customMessage": "Passionate about spatial computing and immersive experiences, ready to shape the future of AR/VR."
+  },
+  "line": {
+    "greeting": "LINE에 지원합니다, 저는",
+    "greetingKo": "LINE에 지원합니다, 저는",
+    "highlightSkills": ["iOS", "Swift", "AI", "Team Lead"],
+    "featuredProjectIds": ["line-ai-dev2", "line-voom-camera", "line-avatar", "line-vision-pro", "hand-gesture-ar", "unity-2-5d-game"],
+    "hideTimeline": false,
+    "customMessage": null
+  },
+  "startup": {
+    "greeting": "Hello, I'm",
+    "greetingKo": "안녕하세요, 저는",
+    "highlightSkills": ["iOS", "Swift", "AI", "Team Lead", "Unity3D"],
+    "featuredProjectIds": ["line-ai-dev2", "line-voom-camera", "hand-gesture-ar", "cats-in-your-street", "unity-2-5d-game", "theme-park-iot"],
+    "hideTimeline": false,
+    "customMessage": "Full-stack mobile developer with team leadership experience, ready to build products from 0 to 1."
+  }
+}

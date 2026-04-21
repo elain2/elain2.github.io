@@ -1,0 +1,130 @@
+[
+  {
+    "id": "line-ai-dev2",
+    "title": "LINE AI Dev 2",
+    "category": "iOS Development",
+    "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    "tags": ["iOS", "Swift", "AI", "Team Lead"],
+    "description": "Leading iOS development for LINE's AI-powered features",
+    "role": "Team Member / Former Team Lead",
+    "responsibilities": [
+      "Led LINE AI Dev 2 iOS team (Feb 2026 - Mar 2026)",
+      "Currently serving as team member (Apr 2026 - Present)",
+      "Developing AI-integrated features for LINE iOS app"
+    ],
+    "period": "2025.08 - Present",
+    "detailedDescription": "Working on LINE's AI development team, focusing on integrating cutting-edge AI features into the LINE iOS application."
+  },
+  {
+    "id": "line-vision-pro",
+    "title": "LINE Vision Solution with Apple Vision Pro",
+    "category": "AR/VR",
+    "thumbnail": "https://images.unsplash.com/photo-1617802690658-1173a812650d?w=800",
+    "tags": ["Vision Pro", "visionOS", "Spatial Computing"],
+    "description": "Presented LINE Vision solution using Apple Vision Pro",
+    "role": "iOS Developer",
+    "responsibilities": [
+      "Developed LINE Vision solution for Apple Vision Pro",
+      "Presented spatial computing demo in gallery setting"
+    ],
+    "period": "2024.09",
+    "detailedDescription": "Developed and presented LINE Vision solution exploring spatial computing and LINE's messaging platform."
+  },
+  {
+    "id": "line-voom-camera",
+    "title": "LINE Voom Camera (iOS)",
+    "category": "iOS Development",
+    "thumbnail": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
+    "tags": ["iOS", "Swift", "Camera", "Team Lead"],
+    "description": "Led development and launch of LINE Voom Camera for iOS",
+    "role": "Team Lead",
+    "responsibilities": [
+      "Led LINE Voom Camera iOS team from 2023 to Apr 2026",
+      "Launched LINE Voom Camera (iOS) in 2023",
+      "Implemented KeyBasedObjectManager architecture"
+    ],
+    "period": "2023 - 2026.04",
+    "detailedDescription": "Led the iOS development team for LINE Voom Camera, a video creation and sharing feature within LINE."
+  },
+  {
+    "id": "line-avatar",
+    "title": "LINE Avatar (iOS)",
+    "category": "iOS Development",
+    "thumbnail": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=800",
+    "tags": ["iOS", "Swift", "MVVM", "3D Graphics"],
+    "description": "Developed LINE Avatar feature with MVVM architecture",
+    "role": "iOS Developer",
+    "responsibilities": [
+      "Launched LINE Avatar (iOS) in 2019",
+      "Introduced MVVM pattern to improve code architecture (2021)"
+    ],
+    "period": "2019 - 2021",
+    "detailedDescription": "Developed LINE Avatar feature for iOS, allowing users to create personalized 3D avatars."
+  },
+  {
+    "id": "hand-gesture-ar",
+    "title": "Sign Language Learning Program",
+    "category": "Research",
+    "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    "tags": ["Python", "OpenCV", "Deep Learning", "AR"],
+    "contribution": 85,
+    "description": "Sign language learning using hand gesture recognition",
+    "role": "Research Intern",
+    "responsibilities": [
+      "Implemented image processing pipeline for RGB-D camera",
+      "Developed CNN-based gesture classification (91% accuracy)"
+    ],
+    "period": "2018",
+    "detailedDescription": "Developed a hand gesture recognition system for sign language learning.",
+    "publication": "Inha University Media Lab Research Project"
+  },
+  {
+    "id": "unity-2-5d-game",
+    "title": "2.5D Adventure Game (Unity3D)",
+    "category": "Game Design",
+    "thumbnail": "https://images.unsplash.com/photo-1686061592689-312bbfb5c055?w=800",
+    "tags": ["Unity3D", "C#", "Shader Programming"],
+    "contribution": 90,
+    "description": "2.5D adventure game with custom graphics effects",
+    "role": "Graphics Programmer",
+    "responsibilities": [
+      "Implemented 2.5D camera rotation system",
+      "Created water material with wave animation"
+    ],
+    "period": "2018",
+    "detailedDescription": "Developed a 2.5D adventure game using Unity3D engine.",
+    "publication": "Korea Information Processing Society 2018"
+  },
+  {
+    "id": "roller-coaster-simulation",
+    "title": "Roller Coaster Graphics Simulation",
+    "category": "Computer Graphics",
+    "thumbnail": "https://images.unsplash.com/photo-1625296276703-3fbc924f07b5?w=800",
+    "tags": ["OpenGL", "C++", "Physics Simulation"],
+    "contribution": 100,
+    "description": "3D roller coaster simulation with physics-based motion",
+    "role": "Solo Developer",
+    "responsibilities": [
+      "Designed rail using trigonometric functions",
+      "Implemented physics for realistic motion"
+    ],
+    "period": "2017",
+    "detailedDescription": "Built a roller coaster graphics simulation using OpenGL."
+  },
+  {
+    "id": "cats-in-your-street",
+    "title": "Cats in your Street",
+    "category": "Web Development",
+    "thumbnail": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800",
+    "tags": ["Web Development", "Community Platform"],
+    "contribution": 100,
+    "description": "Web service for sharing street cats in your neighborhood",
+    "role": "Full Stack Developer",
+    "responsibilities": [
+      "Developed web service for cat community",
+      "Implemented location-based features"
+    ],
+    "period": "2016",
+    "detailedDescription": "Developed 'Cats in your Street', a web service for street cat community."
+  }
+]
