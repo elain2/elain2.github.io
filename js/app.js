@@ -259,7 +259,7 @@ class App {
   // ===== Render Projects =====
   async renderProjects() {
     const projects = await data.getProjects();
-    const categories = ['All', 'iOS Development', 'AR/VR', 'Research', 'Game Design', 'Computer Graphics', 'Web Development'];
+    const categories = ['All', 'iOS Development', 'AR/VR', 'Research', 'Game Design', 'Computer Graphics', 'IoT', 'Web Development'];
 
     const projectsHtml = projects.map(p => `
       <a href="#/projects/${p.id}" class="project-card">

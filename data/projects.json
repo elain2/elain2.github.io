@@ -57,66 +57,93 @@
     "title": "LINE Avatar (iOS)",
     "category": "iOS Development",
     "thumbnail": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=800",
-    "tags": ["iOS", "Swift", "Objective-C", "UIKit", "MVVM", "OOP Design"],
-    "description": "Built and redesigned avatar customization UI with strong OOP patterns",
+    "tags": ["iOS", "Swift", "Objective-C", "UIKit", "AVFoundation", "Vision", "CoreImage", "MVVM"],
+    "description": "Face-driven avatar creation with camera capture and Vision framework",
     "role": "iOS Developer",
     "responsibilities": [
-      "Launched LINE Avatar (iOS) in 2019 for global users",
-      "Introduced MVVM architecture pattern improving testability and reducing UI coupling",
-      "Redesigned data model for Avatar Customization module with strong OOP principles"
+      "Launched LINE Avatar (iOS) in 2019 — face recognition SDK integration and camera capture/processing",
+      "Implemented avatar customization, catalog, and preview UI",
+      "Integrated with messenger chat and profile interfaces",
+      "Introduced MVVM architecture pattern (2020-2022) improving testability and reducing UI coupling"
     ],
     "period": "2019 - 2022",
-    "detailedDescription": "Developed LINE Avatar feature for iOS, enabling users to create personalized 3D avatars. Demonstrated strong object-oriented programming and design skills by introducing MVVM architecture and redesigning the data model to improve code quality and maintainability."
+    "detailedDescription": "Developed LINE Avatar feature for iOS — face recognition-based character creation, customization, and sharing. Built camera capture screens with Vision/CoreImage-based face detection. First production project at LINE Plus, demonstrating strong OOP and architecture design skills."
   },
   {
     "id": "hand-gesture-ar",
-    "title": "Sign Language Learning Program",
+    "title": "RGB-D Hand Gesture Recognition (C++)",
     "category": "Research",
     "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-    "tags": ["Python", "OpenCV", "Deep Learning", "AR"],
+    "tags": ["C++", "OpenCV", "TensorFlow", "Intel RealSense", "Python"],
     "contribution": 85,
-    "description": "Sign language learning using hand gesture recognition",
-    "role": "Research Intern",
+    "description": "Real-time 21-joint hand skeleton extraction from RGB-D camera at 30fps",
+    "role": "Researcher (Graduation Thesis)",
     "responsibilities": [
-      "Implemented image processing pipeline for RGB-D camera",
-      "Developed CNN-based gesture classification (91% accuracy)"
+      "Implemented OpenNI depth stream initialization and resolution/FPS configuration",
+      "Developed depth-first hand segmentation with threshold, noise removal, and hole filling",
+      "Built RGB-Depth alpha blending pipeline for frame composition",
+      "Extracted 21-joint skeleton using Convolutional Pose Machines",
+      "Achieved 91% accuracy with 3x performance improvement (6fps → 18fps)"
     ],
     "period": "2018",
-    "detailedDescription": "Developed a hand gesture recognition system for sign language learning.",
-    "publication": "Inha University Media Lab Research Project"
+    "detailedDescription": "Graduation thesis project using Intel RealSense SR300 RGB-D camera. Built real-time image processing pipeline targeting 30fps — depth-first segmentation, RGB-Depth alpha blending, and 21-joint skeleton extraction. Normalized joint distance data to handle varying camera distances, improving accuracy to 91%.",
+    "publication": "Inha University Computer Science Graduation Thesis",
+    "demoVideo": "https://youtu.be/DJrrfm4XU_M"
   },
   {
     "id": "unity-2-5d-game",
-    "title": "2.5D Adventure Game (Unity3D)",
+    "title": "Unity 2.5D Adventure Game",
     "category": "Game Design",
     "thumbnail": "https://images.unsplash.com/photo-1686061592689-312bbfb5c055?w=800",
-    "tags": ["Unity3D", "C#", "Shader Programming"],
+    "tags": ["Unity3D", "C#", "Shader (GLSL)"],
     "contribution": 90,
-    "description": "2.5D adventure game with custom graphics effects",
+    "description": "2.5D adventure with scene transitions, inventory, and puzzles",
     "role": "Graphics Programmer",
     "responsibilities": [
-      "Implemented 2.5D camera rotation system",
-      "Created water material with wave animation"
+      "Designed game system and implemented core scripts",
+      "Set up character, camera, and lighting",
+      "Implemented 2.5D camera rotation and water shader effects"
     ],
     "period": "2018",
-    "detailedDescription": "Developed a 2.5D adventure game using Unity3D engine.",
-    "publication": "Korea Information Processing Society 2018"
+    "detailedDescription": "2D camera with 3D character placement — a 2.5D adventure game built in Unity. Includes scene transitions, inventory system, and simple puzzles. Capstone project for game programming coursework.",
+    "publication": "Korea Information Processing Society 2018",
+    "publicationUrl": "https://koreascience.kr/article/CFKO201835372171683.page"
   },
   {
     "id": "roller-coaster-simulation",
-    "title": "Roller Coaster Graphics Simulation",
+    "title": "Roller Coaster Graphics (OpenGL · C++)",
     "category": "Computer Graphics",
     "thumbnail": "https://images.unsplash.com/photo-1625296276703-3fbc924f07b5?w=800",
-    "tags": ["OpenGL", "C++", "Physics Simulation"],
+    "tags": ["OpenGL", "C++", "GLUT", "Vector Math", "Lighting"],
     "contribution": 100,
-    "description": "3D roller coaster simulation with physics-based motion",
+    "description": "3D roller coaster with Catmull-Rom spline track and real-time camera",
     "role": "Solo Developer",
     "responsibilities": [
-      "Designed rail using trigonometric functions",
-      "Implemented physics for realistic motion"
+      "Implemented Catmull-Rom spline-based track curve generation",
+      "Built 1st/3rd person camera switching system",
+      "Applied texture mapping and lighting effects"
     ],
     "period": "2017",
-    "detailedDescription": "Built a roller coaster graphics simulation using OpenGL."
+    "detailedDescription": "OpenGL-based 3D roller coaster track and camera system. Implemented curve interpolation, texture mapping, and lighting. C++ real-time rendering experience from computer graphics coursework."
+  },
+  {
+    "id": "theme-park-iot",
+    "title": "EDEN — IoT Theme Park Management",
+    "category": "IoT",
+    "thumbnail": "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800",
+    "tags": ["Arduino", "C/C++", "Node.js", "REST", "MySQL", "LPWA/LoRa"],
+    "contribution": 80,
+    "description": "IoT-based theme park management with LPWA communication",
+    "role": "Firmware & Backend Developer",
+    "responsibilities": [
+      "Wrote sensor data collection firmware and communication protocol",
+      "Organized mobile/server integration interfaces",
+      "Implemented NFC payment, queue management, and lost child alerts"
+    ],
+    "period": "2017",
+    "detailedDescription": "Designed IoT solution to solve theme park problems — payment alerts, inefficient wait times, lost children. Used Low Power Wide Area (LPWA/LoRa) communication to connect small devices across large areas.",
+    "demoVideo": "https://www.youtube.com/watch?v=QNpT0Dq2218",
+    "event": "SKT IoT Makerthon"
   },
   {
     "id": "cats-in-your-street",
