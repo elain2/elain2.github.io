@@ -13,7 +13,10 @@
     "icon": "youtube",
     "color": "#FF2D55",
     "links": [
-      { "url": "https://youtu.be/xtqS5JctUeA", "labelKey": "achievements.watch1" }
+      {
+        "url": "https://youtu.be/xtqS5JctUeA",
+        "labelKey": "achievements.watch1"
+      }
     ]
   },
   {
@@ -23,7 +26,10 @@
     "icon": "youtube",
     "color": "#007AFF",
     "links": [
-      { "url": "https://youtu.be/LOmlBy3FSdo", "labelKey": "achievements.watchVlog" }
+      {
+        "url": "https://youtu.be/LOmlBy3FSdo",
+        "labelKey": "achievements.watchVlog"
+      }
     ]
   },
   {

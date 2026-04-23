@@ -1,12 +1,52 @@
 [
-  { "year": "2026.04", "eventKey": "timeline.2026.04", "type": "work" },
-  { "year": "2026.02", "eventKey": "timeline.2026.02", "type": "work" },
-  { "year": "2025.08", "eventKey": "timeline.2025.08", "type": "work" },
-  { "year": "2024.09", "eventKey": "timeline.2024.09", "type": "highlight" },
-  { "year": "2023", "eventKey": "timeline.2023.launch", "type": "highlight" },
-  { "year": "2021", "eventKey": "timeline.2021", "type": "tech" },
-  { "year": "2019", "eventKey": "timeline.2019", "type": "highlight" },
-  { "year": "2018", "eventKey": "timeline.2018.sign", "type": "research" },
-  { "year": "2017", "eventKey": "timeline.2017.roller", "type": "research" },
-  { "year": "2015", "eventKey": "timeline.2015.enroll", "type": "education" }
+  {
+    "year": "2026.04",
+    "eventKey": "timeline.2026.04",
+    "type": "work"
+  },
+  {
+    "year": "2026.02",
+    "eventKey": "timeline.2026.02",
+    "type": "work"
+  },
+  {
+    "year": "2025.08",
+    "eventKey": "timeline.2025.08",
+    "type": "work"
+  },
+  {
+    "year": "2024.09",
+    "eventKey": "timeline.2024.09",
+    "type": "highlight"
+  },
+  {
+    "year": "2023",
+    "eventKey": "timeline.2023.launch",
+    "type": "highlight"
+  },
+  {
+    "year": "2021",
+    "eventKey": "timeline.2021",
+    "type": "tech"
+  },
+  {
+    "year": "2019",
+    "eventKey": "timeline.2019",
+    "type": "highlight"
+  },
+  {
+    "year": "2018",
+    "eventKey": "timeline.2018.sign",
+    "type": "research"
+  },
+  {
+    "year": "2017",
+    "eventKey": "timeline.2017.roller",
+    "type": "research"
+  },
+  {
+    "year": "2015",
+    "eventKey": "timeline.2015.enroll",
+    "type": "education"
+  }
 ]

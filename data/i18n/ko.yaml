@@ -1,0 +1,70 @@
+# 한국어 번역
+
+# 네비게이션
+nav.home: 홈
+nav.projects: 프로젝트
+nav.contact: 연락처
+
+# 히어로 섹션
+hero.greeting: "안녕하세요, 저는"
+hero.title: LINE iOS 개발자
+hero.description: "LINE에서 AI 기능을 개발하는 iOS 개발자입니다. LINE Voom Camera와 LINE Avatar의 전 팀 리더입니다."
+
+# 섹션
+skills.title: 기술
+skills.subtitle: iOS 개발 & 컴퓨터 비전
+
+education.title: 학력
+education.subtitle: 인하대학교, 컴퓨터공학
+
+career.title: 경력
+career.subtitle: 라인 - iOS 개발자
+
+contact.title: 연락하기
+contact.subtitle: 협업과 새로운 기회를 환영합니다
+
+# 주요 프로젝트
+featured.title: 주요 프로젝트
+featured.viewAll: 모든 프로젝트 보기
+
+# 타임라인
+timeline.title: 타임라인
+timeline.subtitle: 개발자로서의 여정
+timeline.2026.04: LINE AI Dev 2 팀 멤버
+timeline.2026.02: LINE AI Dev 2 (iOS) 팀 리드
+timeline.2025.08: LINE AI Task Force 합류 — SSE 스트리밍 AI 채팅 개발
+timeline.2024.09: LY HACK DAY에서 Vision Pro 'Immersive Memory'로 수상
+timeline.2023.launch: LINE Voom Camera (iOS) 출시
+timeline.2021: LINE Avatar에 MVVM 패턴 도입
+timeline.2019: LINE Avatar (iOS) 출시
+timeline.2018.sign: 수화 학습 프로그램
+timeline.2017.roller: 롤러코스터 시뮬레이션
+timeline.2015.enroll: 인하대학교 입학
+
+# 성과
+achievements.title: 성과 & 미디어
+achievements.subtitle: 대회, 미디어 출연
+achievements.hackday.title: LY HACK DAY 2024 수상
+achievements.hackday.desc: Vision Pro 'Immersive Memory'로 Communication Award 수상 — 즉시 서비스 통합 가능성 인정
+achievements.wwdc.title: WWDC 2023 커버리지
+achievements.wwdc.desc: WWDC 2023 기능 설명 YouTube 출연
+achievements.vlog.title: LINE 개발자 브이로그
+achievements.vlog.desc: "'갓생 개발자'로 소개"
+achievements.kaist.title: KAIST 영재 프로그램
+achievements.kaist.desc: 로봇 & 사이버 정보 영재 활동 참여
+achievements.watch1: 보기
+achievements.watchVlog: 브이로그 보기
+
+# 프로젝트
+projects.title: 프로젝트
+projects.subtitle: iOS 개발부터 연구까지
+projects.all: 전체
+projects.back: 뒤로
+
+project.tech: 기술 스택
+project.role: 역할
+project.about: 소개
+
+# 푸터
+footer.connect: 연락하기
+footer.copyright: "© 2026 이가영"

@@ -10,8 +10,19 @@
   "apple": {
     "greeting": "Hi Apple Team, I'm",
     "greetingKo": "안녕하세요 Apple 팀, 저는",
-    "highlightSkills": ["iOS", "Swift", "visionOS"],
-    "featuredProjectIds": ["line-vision-pro", "line-ai-dev2", "line-voom-camera", "line-avatar", "hand-gesture-ar", "unity-2-5d-game"],
+    "highlightSkills": [
+      "iOS",
+      "Swift",
+      "visionOS"
+    ],
+    "featuredProjectIds": [
+      "line-vision-pro",
+      "line-ai-dev2",
+      "line-voom-camera",
+      "line-avatar",
+      "hand-gesture-ar",
+      "unity-2-5d-game"
+    ],
     "hideTimeline": false,
     "customMessage": "Passionate about creating innovative Apple platform experiences with 7+ years of iOS development."
   },
@@ -22,40 +33,105 @@
     "customTitleKo": "시니어 iOS UI 엔지니어",
     "customDescription": "7+ years at LINE building polished, user-facing UIs with Swift, Objective-C, UIKit, and SwiftUI. Led iOS teams for camera and AI features serving hundreds of millions of users. Deep expertise in networking protocols, asynchronous programming, and API design. Eager to help developers showcase their apps to customers worldwide.",
     "customDescriptionKo": "LINE에서 7년 이상 Swift, Objective-C, UIKit, SwiftUI로 사용자 중심 UI를 개발. 수억 명의 사용자를 위한 카메라 및 AI 기능의 iOS 팀을 리드. 네트워킹 프로토콜, 비동기 프로그래밍, API 설계 전문. 전 세계 고객에게 앱을 선보이는 개발자를 돕고 싶습니다.",
-    "highlightSkills": ["iOS", "Swift", "UIKit", "SwiftUI", "Objective-C", "Networking", "Async Programming", "JavaScript/TypeScript"],
-    "featuredProjectIds": ["line-avatar", "line-voom-camera", "line-ai-dev2", "line-vision-pro", "theme-park-iot", "unity-2-5d-game"],
+    "highlightSkills": [
+      "iOS",
+      "Swift",
+      "UIKit",
+      "SwiftUI",
+      "Objective-C",
+      "Networking",
+      "Async Programming",
+      "JavaScript/TypeScript"
+    ],
+    "featuredProjectIds": [
+      "line-avatar",
+      "line-voom-camera",
+      "line-ai-dev2",
+      "line-vision-pro",
+      "theme-park-iot",
+      "unity-2-5d-game"
+    ],
     "hideTimeline": false,
     "customMessage": null
   },
   "google": {
     "greeting": "Hi Google Team, I'm",
     "greetingKo": "안녕하세요 Google 팀, 저는",
-    "highlightSkills": ["AI", "Computer Vision", "iOS", "Swift"],
-    "featuredProjectIds": ["line-ai-dev2", "hand-gesture-ar", "line-vision-pro", "line-voom-camera", "east-asian-game-market", "roller-coaster-simulation"],
+    "highlightSkills": [
+      "AI",
+      "Computer Vision",
+      "iOS",
+      "Swift"
+    ],
+    "featuredProjectIds": [
+      "line-ai-dev2",
+      "hand-gesture-ar",
+      "line-vision-pro",
+      "line-voom-camera",
+      "east-asian-game-market",
+      "roller-coaster-simulation"
+    ],
     "hideTimeline": false,
     "customMessage": "Experienced in AI integration and mobile development, eager to contribute to Google's innovative products."
   },
   "meta": {
     "greeting": "Hi Meta Team, I'm",
     "greetingKo": "안녕하세요 Meta 팀, 저는",
-    "highlightSkills": ["visionOS", "AR/VR", "Unity3D", "iOS"],
-    "featuredProjectIds": ["line-vision-pro", "safety-gray-ar", "unity-2-5d-game", "roller-coaster-simulation", "line-avatar", "hand-gesture-ar"],
+    "highlightSkills": [
+      "visionOS",
+      "AR/VR",
+      "Unity3D",
+      "iOS"
+    ],
+    "featuredProjectIds": [
+      "line-vision-pro",
+      "safety-gray-ar",
+      "unity-2-5d-game",
+      "roller-coaster-simulation",
+      "line-avatar",
+      "hand-gesture-ar"
+    ],
     "hideTimeline": false,
     "customMessage": "Passionate about spatial computing and immersive experiences, ready to shape the future of AR/VR."
   },
   "line": {
     "greeting": "LINE에 지원합니다, 저는",
     "greetingKo": "LINE에 지원합니다, 저는",
-    "highlightSkills": ["iOS", "Swift", "AI", "Team Lead"],
-    "featuredProjectIds": ["line-ai-dev2", "line-voom-camera", "line-avatar", "line-vision-pro", "hand-gesture-ar", "unity-2-5d-game"],
+    "highlightSkills": [
+      "iOS",
+      "Swift",
+      "AI",
+      "Team Lead"
+    ],
+    "featuredProjectIds": [
+      "line-ai-dev2",
+      "line-voom-camera",
+      "line-avatar",
+      "line-vision-pro",
+      "hand-gesture-ar",
+      "unity-2-5d-game"
+    ],
     "hideTimeline": false,
     "customMessage": null
   },
   "startup": {
     "greeting": "Hello, I'm",
     "greetingKo": "안녕하세요, 저는",
-    "highlightSkills": ["iOS", "Swift", "AI", "Team Lead", "Unity3D"],
-    "featuredProjectIds": ["line-ai-dev2", "line-voom-camera", "hand-gesture-ar", "cats-in-your-street", "unity-2-5d-game", "theme-park-iot"],
+    "highlightSkills": [
+      "iOS",
+      "Swift",
+      "AI",
+      "Team Lead",
+      "Unity3D"
+    ],
+    "featuredProjectIds": [
+      "line-ai-dev2",
+      "line-voom-camera",
+      "hand-gesture-ar",
+      "cats-in-your-street",
+      "unity-2-5d-game",
+      "theme-park-iot"
+    ],
     "hideTimeline": false,
     "customMessage": "Full-stack mobile developer with team leadership experience, ready to build products from 0 to 1."
   }

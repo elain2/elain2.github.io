@@ -2,13 +2,32 @@
   "name": "Kayoung Lee",
   "email": "elain202@gmail.com",
   "phone": "[REDACTED]",
-  "skills": ["iOS", "Swift", "SwiftUI", "UIKit", "AVFoundation", "Networking", "Async Programming", "visionOS", "Objective-C", "JavaScript/TypeScript"],
+  "skills": [
+    "iOS",
+    "Swift",
+    "SwiftUI",
+    "UIKit",
+    "AVFoundation",
+    "Networking",
+    "Async Programming",
+    "visionOS",
+    "Objective-C",
+    "JavaScript/TypeScript"
+  ],
   "socialLinks": {
     "github": "https://github.com",
     "linkedin": "https://linkedin.com",
     "youtube": [
-      { "label": "WWDC 2023", "url": "https://youtu.be/xtqS5JctUeA" },
-      { "label": "LINE Developer Vlog", "url": "https://youtu.be/LOmlBy3FSdo" }
+      {
+        "label": "WWDC 2023",
+        "url": "https://youtu.be/xtqS5JctUeA"
+      }
+    ],
+    "null": [
+      {
+        "label": "LINE Developer Vlog",
+        "url": "https://youtu.be/LOmlBy3FSdo"
+      }
     ]
   }
 }

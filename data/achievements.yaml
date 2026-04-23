@@ -1,0 +1,32 @@
+# 성과 및 수상
+# Achievements & Awards
+
+- titleKey: achievements.hackday.title
+  descKey: achievements.hackday.desc
+  year: "2024"
+  icon: award
+  color: "#5856D6"
+
+- titleKey: achievements.wwdc.title
+  descKey: achievements.wwdc.desc
+  year: "2023"
+  icon: youtube
+  color: "#FF2D55"
+  links:
+    - url: https://youtu.be/xtqS5JctUeA
+      labelKey: achievements.watch1
+
+- titleKey: achievements.vlog.title
+  descKey: achievements.vlog.desc
+  year: "2023"
+  icon: youtube
+  color: "#007AFF"
+  links:
+    - url: https://youtu.be/LOmlBy3FSdo
+      labelKey: achievements.watchVlog
+
+- titleKey: achievements.kaist.title
+  descKey: achievements.kaist.desc
+  year: "2011-2012"
+  icon: award
+  color: "#34C759"
