@@ -2,7 +2,7 @@
   "name": "Kayoung Lee",
   "email": "elain202@gmail.com",
   "phone": "[REDACTED]",
-  "skills": ["iOS", "Swift", "visionOS", "AI", "Unity3D", "OpenGL", "Computer Vision"],
+  "skills": ["iOS", "Swift", "SwiftUI", "UIKit", "AVFoundation", "Networking", "Async Programming", "visionOS", "Objective-C", "JavaScript/TypeScript"],
   "socialLinks": {
     "github": "https://github.com",
     "linkedin": "https://linkedin.com",

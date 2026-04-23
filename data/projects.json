@@ -4,62 +4,69 @@
     "title": "LINE AI Dev 2",
     "category": "iOS Development",
     "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
-    "tags": ["iOS", "Swift", "AI", "Team Lead"],
-    "description": "Leading iOS development for LINE's AI-powered features",
-    "role": "Team Member / Former Team Lead",
+    "tags": ["iOS", "Swift", "URLSession", "SSE", "Combine", "Async/Await", "UIKit"],
+    "description": "Building real-time AI chat UI with streaming responses and robust networking",
+    "role": "iOS Project Lead",
     "responsibilities": [
-      "Led LINE AI Dev 2 iOS team (Feb 2026 - Mar 2026)",
-      "Currently serving as team member (Apr 2026 - Present)",
-      "Developing AI-integrated features for LINE iOS app"
+      "Architected iOS client module handling response streaming, conversation state, and network/cache optimization for hundreds of millions of DAUs",
+      "Implemented URLSession-based Server-Sent Events (SSE) streaming for real-time AI responses",
+      "Developed Markdown Parser and NSAttributedString-based Renderer for rich text display",
+      "Defined robust error, retry, and cancellation policies for unreliable network conditions",
+      "Coordinated API contract alignment with backend engineers and product managers"
     ],
     "period": "2025.08 - Present",
-    "detailedDescription": "Working on LINE's AI development team, focusing on integrating cutting-edge AI features into the LINE iOS application."
+    "detailedDescription": "Leading iOS development for LINE's in-app AI assistant. Deep expertise in networking protocols (URLSession, SSE), asynchronous programming (Combine, async/await), and building responsive UIs that handle streaming data at scale."
   },
   {
     "id": "line-vision-pro",
-    "title": "LINE Vision Solution with Apple Vision Pro",
+    "title": "Immersive Memory — Vision Pro (LY HACK DAY Award)",
     "category": "AR/VR",
     "thumbnail": "https://images.unsplash.com/photo-1617802690658-1173a812650d?w=800",
-    "tags": ["Vision Pro", "visionOS", "Spatial Computing"],
-    "description": "Presented LINE Vision solution using Apple Vision Pro",
+    "tags": ["visionOS", "SwiftUI", "RealityKit", "ARKit", "PhotoKit", "AVFoundation"],
+    "description": "Award-winning visionOS experience with SwiftUI and RealityKit",
     "role": "iOS Developer",
     "responsibilities": [
-      "Developed LINE Vision solution for Apple Vision Pro",
-      "Presented spatial computing demo in gallery setting"
+      "Built visionOS experience for reliving shared memories in a 3D gallery using SwiftUI",
+      "Placed photos in RealityKit 3D scene with gaze- and gesture-driven interaction",
+      "Integrated PhotoKit and AVFoundation for media asset handling",
+      "Won Communication Award at LY Corporation's internal Hack Day in Japan"
     ],
     "period": "2024.09",
-    "detailedDescription": "Developed and presented LINE Vision solution exploring spatial computing and LINE's messaging platform."
+    "detailedDescription": "Designed and built a visionOS experience that lets LINE users relive shared memories in a 3D gallery using Apple Vision Pro. Demonstrated expertise in SwiftUI, RealityKit, and Apple's latest spatial UI frameworks. Recognized for immediate integration viability into LINE service."
   },
   {
     "id": "line-voom-camera",
     "title": "LINE Voom Camera (iOS)",
     "category": "iOS Development",
     "thumbnail": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800",
-    "tags": ["iOS", "Swift", "Camera", "Team Lead"],
-    "description": "Led development and launch of LINE Voom Camera for iOS",
+    "tags": ["iOS", "Swift", "AVFoundation", "Metal", "Core Image", "UIKit", "GCD"],
+    "description": "Led AVFoundation-based camera with real-time effects and multi-track video composition",
     "role": "Team Lead",
     "responsibilities": [
-      "Led LINE Voom Camera iOS team from 2023 to Apr 2026",
-      "Launched LINE Voom Camera (iOS) in 2023",
-      "Implemented KeyBasedObjectManager architecture"
+      "Owned VoomCameraViewController — AVFoundation capture session, live preview rendering, and device-specific format selection",
+      "Designed real-time preview effects pipeline using Metal and Core Image",
+      "Architected Storyboard data model with NSCoding and schema versioning for full editing state",
+      "Built VOOMVideoComposer for multi-track video/audio composition using AVMutableComposition",
+      "Ensured thread safety using GCD and OperationQueue; optimized memory for large multi-track edits"
     ],
     "period": "2023 - 2026.04",
-    "detailedDescription": "Led the iOS development team for LINE Voom Camera, a video creation and sharing feature within LINE."
+    "detailedDescription": "Led the iOS team for LINE's short-form video product shipped to global users (JP/TW/TH). Deep expertise in UIKit, AVFoundation, Metal, and asynchronous programming with GCD/OperationQueue. Delivered polished camera UI with real-time effects and robust video editing capabilities."
   },
   {
     "id": "line-avatar",
     "title": "LINE Avatar (iOS)",
     "category": "iOS Development",
     "thumbnail": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=800",
-    "tags": ["iOS", "Swift", "MVVM", "3D Graphics"],
-    "description": "Developed LINE Avatar feature with MVVM architecture",
+    "tags": ["iOS", "Swift", "Objective-C", "UIKit", "MVVM", "OOP Design"],
+    "description": "Built and redesigned avatar customization UI with strong OOP patterns",
     "role": "iOS Developer",
     "responsibilities": [
-      "Launched LINE Avatar (iOS) in 2019",
-      "Introduced MVVM pattern to improve code architecture (2021)"
+      "Launched LINE Avatar (iOS) in 2019 for global users",
+      "Introduced MVVM architecture pattern improving testability and reducing UI coupling",
+      "Redesigned data model for Avatar Customization module with strong OOP principles"
     ],
-    "period": "2019 - 2021",
-    "detailedDescription": "Developed LINE Avatar feature for iOS, allowing users to create personalized 3D avatars."
+    "period": "2019 - 2022",
+    "detailedDescription": "Developed LINE Avatar feature for iOS, enabling users to create personalized 3D avatars. Demonstrated strong object-oriented programming and design skills by introducing MVVM architecture and redesigning the data model to improve code quality and maintainability."
   },
   {
     "id": "hand-gesture-ar",

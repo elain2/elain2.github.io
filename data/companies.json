@@ -15,6 +15,14 @@
     "hideTimeline": false,
     "customMessage": "Passionate about creating innovative Apple platform experiences with 7+ years of iOS development."
   },
+  "apple-appstore": {
+    "greeting": "Hi App Store Team, I'm",
+    "greetingKo": "안녕하세요 App Store 팀, 저는",
+    "highlightSkills": ["iOS", "Swift", "SwiftUI", "UIKit", "AVFoundation", "Networking", "Async Programming"],
+    "featuredProjectIds": ["line-ai-dev2", "line-voom-camera", "line-avatar", "line-vision-pro", "hand-gesture-ar", "unity-2-5d-game"],
+    "hideTimeline": false,
+    "customMessage": "7+ years building beautifully crafted, robust UIs at scale with Swift, UIKit, SwiftUI, and AVFoundation. Proven expertise in networking protocols, asynchronous programming, and cross-functional collaboration to deliver polished experiences on time."
+  },
   "google": {
     "greeting": "Hi Google Team, I'm",
     "greetingKo": "안녕하세요 Google 팀, 저는",

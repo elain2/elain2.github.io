@@ -1,5 +1,12 @@
 [
   {
+    "titleKey": "achievements.hackday.title",
+    "descKey": "achievements.hackday.desc",
+    "year": "2024",
+    "icon": "award",
+    "color": "#5856D6"
+  },
+  {
     "titleKey": "achievements.wwdc.title",
     "descKey": "achievements.wwdc.desc",
     "year": "2023",
