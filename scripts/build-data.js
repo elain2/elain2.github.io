@@ -14,84 +14,118 @@ const path = require('path');
 const DATA_DIR = path.join(__dirname, '..', 'data');
 
 /**
- * Simple YAML parser (supports our use cases)
- * - Key-value pairs
- * - Nested objects
- * - Arrays (- item)
- * - Multi-line strings (>-)
- * - Comments (#)
+ * Parse YAML value to appropriate JS type
+ */
+function parseValue(value) {
+  if (value === undefined || value === '') return '';
+  const v = value.trim();
+  if (v === 'null' || v === '~') return null;
+  if (v === 'true') return true;
+  if (v === 'false') return false;
+  if (v === '[]') return [];
+  if (v === '{}') return {};
+  if (/^-?\d+$/.test(v)) return parseInt(v, 10);
+  if (/^-?\d+\.\d+$/.test(v)) return parseFloat(v);
+  // Remove quotes
+  if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+    return v.slice(1, -1);
+  }
+  return v;
+}
+
+/**
+ * Get indentation level (number of spaces)
+ */
+function getIndent(line) {
+  const match = line.match(/^(\s*)/);
+  return match ? match[1].length : 0;
+}
+
+/**
+ * Parse YAML content to JS object
  */
 function parseYaml(content) {
   const lines = content.split('\n');
-  const result = {};
-  const stack = [{ obj: result, indent: -1 }];
-  let currentKey = null;
+
+  // Remove comments and handle multiline strings
+  const cleanLines = [];
   let inMultiline = false;
-  let multilineValue = [];
-  let arrayKey = null;
+  let multilineIndent = 0;
+  let multilineContent = [];
+  let multilineKey = '';
+  let multilineBaseIndent = 0;
 
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
+    let line = lines[i];
     const trimmed = line.trim();
 
-    // Skip empty lines and comments (unless in multiline)
-    if (!inMultiline && (trimmed === '' || trimmed.startsWith('#'))) {
-      continue;
-    }
-
-    // Handle multiline continuation
+    // Handle multiline string continuation
     if (inMultiline) {
-      const lineIndent = line.search(/\S/);
-      if (lineIndent > stack[stack.length - 1].indent && trimmed !== '') {
-        multilineValue.push(trimmed);
+      const indent = getIndent(line);
+      if (trimmed === '' || indent > multilineBaseIndent) {
+        if (trimmed) multilineContent.push(trimmed);
         continue;
       } else {
-        // End multiline
-        const parent = stack[stack.length - 1].obj;
-        parent[currentKey] = multilineValue.join(' ');
+        // End of multiline - emit the combined value
+        cleanLines.push(' '.repeat(multilineBaseIndent) + multilineKey + ': "' + multilineContent.join(' ') + '"');
         inMultiline = false;
-        multilineValue = [];
-        if (trimmed === '') continue;
+        multilineContent = [];
       }
     }
 
-    const indent = line.search(/\S/);
+    // Skip empty lines and comments
+    if (trimmed === '' || trimmed.startsWith('#')) continue;
 
-    // Pop stack for dedented lines
-    while (stack.length > 1 && indent <= stack[stack.length - 1].indent) {
-      stack.pop();
-      arrayKey = null;
-    }
-
-    const parent = stack[stack.length - 1].obj;
-
-    // Array item
-    if (trimmed.startsWith('- ')) {
-      const value = trimmed.slice(2).trim();
-
-      // Check if it's an object in array (- key: value)
-      const kvMatch = value.match(/^(\w+):\s*(.*)$/);
-      if (kvMatch) {
-        const obj = {};
-        obj[kvMatch[1]] = parseValue(kvMatch[2]);
-
-        if (!Array.isArray(parent[arrayKey])) {
-          parent[arrayKey] = [];
-        }
-        parent[arrayKey].push(obj);
-
-        // Push this object for potential nested properties
-        stack.push({ obj: obj, indent: indent });
-      } else {
-        // Simple array item
-        if (arrayKey && Array.isArray(parent[arrayKey])) {
-          parent[arrayKey].push(parseValue(value));
-        } else if (Array.isArray(parent)) {
-          parent.push(parseValue(value));
-        }
+    // Check for multiline indicator
+    if (trimmed.endsWith('>-') || trimmed.endsWith('|')) {
+      const match = trimmed.match(/^([^:]+):\s*[>|]-?$/);
+      if (match) {
+        multilineKey = match[1];
+        multilineBaseIndent = getIndent(line);
+        inMultiline = true;
+        multilineContent = [];
+        continue;
       }
-      continue;
     }
+
+    cleanLines.push(line);
+  }
+
+  // Handle trailing multiline
+  if (inMultiline && multilineContent.length > 0) {
+    cleanLines.push(' '.repeat(multilineBaseIndent) + multilineKey + ': "' + multilineContent.join(' ') + '"');
+  }
+
+  return parseYamlLines(cleanLines, 0, cleanLines.length);
+}
+
+/**
+ * Parse a range of YAML lines into an object or array
+ */
+function parseYamlLines(lines, start, end) {
+  if (start >= end) return {};
+
+  const firstLine = lines[start].trim();
+
+  // If first line starts with -, it's an array
+  if (firstLine.startsWith('- ')) {
+    return parseYamlArray(lines, start, end);
+  }
+
+  return parseYamlObject(lines, start, end);
+}
+
+/**
+ * Parse YAML lines as an object
+ */
+function parseYamlObject(lines, start, end) {
+  const result = {};
+  let i = start;
+
+  while (i < end) {
+    const line = lines[i];
+    const trimmed = line.trim();
+    const indent = getIndent(line);
 
     // Key-value pair
     const kvMatch = trimmed.match(/^([^:]+):\s*(.*)$/);
@@ -99,160 +133,152 @@ function parseYaml(content) {
       const key = kvMatch[1].trim();
       const value = kvMatch[2].trim();
 
-      if (value === '' || value === '>-') {
-        // Start of nested object, array, or multiline
-        if (value === '>-') {
-          inMultiline = true;
-          currentKey = key;
-          multilineValue = [];
-        } else {
-          // Check next line to determine if array or object
-          const nextLine = lines[i + 1];
-          if (nextLine && nextLine.trim().startsWith('-')) {
-            parent[key] = [];
-            arrayKey = key;
-          } else {
-            parent[key] = {};
-            stack.push({ obj: parent[key], indent: indent });
+      if (value === '' || value === '>-' || value === '|') {
+        // Find the block of nested content
+        const blockStart = i + 1;
+        const baseIndent = indent;
+        let blockEnd = blockStart;
+
+        while (blockEnd < end) {
+          const nextLine = lines[blockEnd];
+          const nextTrimmed = nextLine.trim();
+          if (nextTrimmed === '') {
+            blockEnd++;
+            continue;
           }
+          const nextIndent = getIndent(nextLine);
+          if (nextIndent <= baseIndent) break;
+          blockEnd++;
         }
+
+        if (blockStart < blockEnd) {
+          result[key] = parseYamlLines(lines, blockStart, blockEnd);
+        } else {
+          result[key] = value === '' ? {} : '';
+        }
+        i = blockEnd;
       } else {
-        parent[key] = parseValue(value);
-        arrayKey = null;
+        result[key] = parseValue(value);
+        i++;
       }
+    } else {
+      i++;
     }
-  }
-
-  // Handle trailing multiline
-  if (inMultiline && currentKey) {
-    const parent = stack[stack.length - 1].obj;
-    parent[currentKey] = multilineValue.join(' ');
   }
 
   return result;
 }
 
 /**
- * Parse a YAML value to appropriate JS type
+ * Parse YAML lines as an array
  */
-function parseValue(value) {
-  if (value === 'null' || value === '~') return null;
-  if (value === 'true') return true;
-  if (value === 'false') return false;
-  if (value === '[]') return [];
-  if (value === '{}') return {};
-  if (/^-?\d+$/.test(value)) return parseInt(value, 10);
-  if (/^-?\d+\.\d+$/.test(value)) return parseFloat(value);
-
-  // Remove quotes
-  if ((value.startsWith('"') && value.endsWith('"')) ||
-      (value.startsWith("'") && value.endsWith("'"))) {
-    return value.slice(1, -1);
-  }
-
-  return value;
-}
-
-/**
- * Parse YAML array file (starts with -)
- */
-function parseYamlArray(content) {
-  const lines = content.split('\n');
+function parseYamlArray(lines, start, end) {
   const result = [];
-  let currentItem = null;
-  let currentIndent = 0;
-  let inLinks = false;
-  let linksArray = [];
+  let i = start;
 
-  for (const line of lines) {
+  while (i < end) {
+    const line = lines[i];
     const trimmed = line.trim();
+    const indent = getIndent(line);
 
-    // Skip empty lines and comments
-    if (trimmed === '' || trimmed.startsWith('#')) continue;
+    if (trimmed.startsWith('- ')) {
+      const rest = trimmed.slice(2).trim();
 
-    const indent = line.search(/\S/);
-
-    // New array item
-    if (trimmed.startsWith('- ') && indent === 0) {
-      // Save previous item
-      if (currentItem) {
-        if (inLinks && linksArray.length > 0) {
-          currentItem.links = linksArray;
-        }
-        result.push(currentItem);
-      }
-
-      currentItem = {};
-      inLinks = false;
-      linksArray = [];
-
-      // Parse first property
-      const rest = trimmed.slice(2);
-      const kvMatch = rest.match(/^(\w+):\s*(.*)$/);
+      // Check if it's a simple value or start of object
+      const kvMatch = rest.match(/^([^:]+):\s*(.*)$/);
       if (kvMatch) {
-        currentItem[kvMatch[1]] = parseValue(kvMatch[2]);
-      }
-      currentIndent = indent;
-      continue;
-    }
+        // It's an object - find all properties at this level
+        const obj = {};
+        const key = kvMatch[1].trim();
+        const value = kvMatch[2].trim();
 
-    // Nested array item (links)
-    if (trimmed.startsWith('- ') && indent > 0 && inLinks) {
-      const rest = trimmed.slice(2);
-      const kvMatch = rest.match(/^(\w+):\s*(.*)$/);
-      if (kvMatch) {
-        const linkObj = {};
-        linkObj[kvMatch[1]] = parseValue(kvMatch[2]);
-        linksArray.push(linkObj);
-      }
-      continue;
-    }
+        if (value === '') {
+          // Nested block
+          const blockStart = i + 1;
+          let blockEnd = blockStart;
+          const itemIndent = indent + 2;
 
-    // Property of current item
-    if (currentItem) {
-      const kvMatch = trimmed.match(/^(\w+):\s*(.*)$/);
-      if (kvMatch) {
-        const key = kvMatch[1];
-        const value = kvMatch[2];
-
-        if (key === 'links' && value === '') {
-          inLinks = true;
-        } else if (inLinks && indent > currentIndent + 2) {
-          // This is a property of a link object
-          const lastLink = linksArray[linksArray.length - 1];
-          if (lastLink) {
-            lastLink[key] = parseValue(value);
+          while (blockEnd < end) {
+            const nextLine = lines[blockEnd];
+            const nextTrimmed = nextLine.trim();
+            if (nextTrimmed === '') {
+              blockEnd++;
+              continue;
+            }
+            const nextIndent = getIndent(nextLine);
+            if (nextIndent < itemIndent || nextTrimmed.startsWith('- ')) {
+              if (nextIndent <= indent) break;
+            }
+            blockEnd++;
           }
-        } else {
-          currentItem[key] = parseValue(value);
-          inLinks = false;
-        }
-      }
-    }
-  }
 
-  // Save last item
-  if (currentItem) {
-    if (inLinks && linksArray.length > 0) {
-      currentItem.links = linksArray;
+          obj[key] = parseYamlLines(lines, blockStart, blockEnd);
+          i = blockEnd;
+        } else {
+          obj[key] = parseValue(value);
+          i++;
+        }
+
+        // Continue reading properties of this object
+        const itemIndent = indent + 2;
+        while (i < end) {
+          const nextLine = lines[i];
+          const nextTrimmed = nextLine.trim();
+          if (nextTrimmed === '') {
+            i++;
+            continue;
+          }
+          const nextIndent = getIndent(nextLine);
+
+          // If we hit another array item or dedent, stop
+          if (nextTrimmed.startsWith('- ') || nextIndent <= indent) break;
+
+          // Parse this property
+          const propMatch = nextTrimmed.match(/^([^:]+):\s*(.*)$/);
+          if (propMatch) {
+            const propKey = propMatch[1].trim();
+            const propValue = propMatch[2].trim();
+
+            if (propValue === '') {
+              // Nested block
+              const blockStart = i + 1;
+              let blockEnd = blockStart;
+
+              while (blockEnd < end) {
+                const bl = lines[blockEnd];
+                const bt = bl.trim();
+                if (bt === '') {
+                  blockEnd++;
+                  continue;
+                }
+                const bi = getIndent(bl);
+                if (bi <= nextIndent) break;
+                blockEnd++;
+              }
+
+              obj[propKey] = parseYamlLines(lines, blockStart, blockEnd);
+              i = blockEnd;
+            } else {
+              obj[propKey] = parseValue(propValue);
+              i++;
+            }
+          } else {
+            i++;
+          }
+        }
+
+        result.push(obj);
+      } else {
+        // Simple value
+        result.push(parseValue(rest));
+        i++;
+      }
+    } else {
+      i++;
     }
-    result.push(currentItem);
   }
 
   return result;
-}
-
-/**
- * Detect if YAML content is an array (starts with -)
- */
-function isYamlArray(content) {
-  const lines = content.split('\n');
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (trimmed === '' || trimmed.startsWith('#')) continue;
-    return trimmed.startsWith('-');
-  }
-  return false;
 }
 
 /**
@@ -260,7 +286,7 @@ function isYamlArray(content) {
  */
 function convertYamlFile(yamlPath) {
   const content = fs.readFileSync(yamlPath, 'utf-8');
-  const data = isYamlArray(content) ? parseYamlArray(content) : parseYaml(content);
+  const data = parseYaml(content);
 
   const jsonPath = yamlPath.replace('.yaml', '.json');
   fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));

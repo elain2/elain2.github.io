@@ -352,3 +352,47 @@ img { max-width: 100%; display: block; }
 .gap-1 { gap: 0.5rem; }
 .gap-2 { gap: 1rem; }
 .hidden { display: none !important; }
+
+/* ===== Role Mapping ===== */
+.role-mapping-section {
+  background: linear-gradient(180deg, transparent, rgba(0,122,255,0.03));
+}
+.role-mapping {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+.role-mapping-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .role-mapping-item {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+.role-mapping-category {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,122,255,0.25);
+}
+.role-mapping-desc {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}

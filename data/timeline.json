@@ -31,8 +31,13 @@
   },
   {
     "year": "2019",
-    "eventKey": "timeline.2019",
+    "eventKey": "timeline.2019.avatar",
     "type": "highlight"
+  },
+  {
+    "year": "2019",
+    "eventKey": "timeline.2019.yuki",
+    "type": "tech"
   },
   {
     "year": "2018",

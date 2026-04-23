@@ -101,6 +101,19 @@ class DataStore {
     if (!this.companyConfig) return null;
     return lang === 'ko' ? this.companyConfig.customDescriptionKo : this.companyConfig.customDescription;
   }
+
+  getRoleMapping(lang) {
+    if (!this.companyConfig?.roleMapping) return null;
+    const rm = this.companyConfig.roleMapping;
+    return {
+      title: lang === 'ko' ? (rm.titleKo || rm.title) : rm.title,
+      subtitle: lang === 'ko' ? (rm.subtitleKo || rm.subtitle) : rm.subtitle,
+      items: rm.items?.map(item => ({
+        category: lang === 'ko' ? (item.categoryKo || item.category) : item.category,
+        description: lang === 'ko' ? (item.descriptionKo || item.description) : item.description
+      })) || []
+    };
+  }
 }
 
 // ===== i18n =====
@@ -167,6 +180,7 @@ class App {
     const customMessage = data.getCustomMessage();
     const customTitle = data.getCustomTitle(i18n.lang);
     const customDescription = data.getCustomDescription(i18n.lang);
+    const roleMapping = data.getRoleMapping(i18n.lang);
     const company = data.currentCompany;
 
     const skillsHtml = profile.skills.map(s => {
@@ -214,6 +228,25 @@ class App {
             <p class="hero-desc">${customDescription || i18n.t('hero.description')}</p>
           </div>
         </section>
+
+        ${roleMapping ? `
+        <section class="section role-mapping-section">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="section-title">${roleMapping.title}</h2>
+              <p class="section-subtitle">${roleMapping.subtitle}</p>
+            </div>
+            <div class="role-mapping">
+              ${roleMapping.items.map(item => `
+                <div class="role-mapping-item">
+                  <div class="role-mapping-category">${item.category}</div>
+                  <div class="role-mapping-desc">${item.description}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+        ` : ''}
 
         <section class="container section">
           <div class="bento">
