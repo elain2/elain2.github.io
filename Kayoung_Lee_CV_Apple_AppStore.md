@@ -2,7 +2,7 @@
 
 Senior iOS Engineer  ·  Swift · SwiftUI · UIKit · AVFoundation
 
-elain202@gmail.com  ·  Portfolio: https://kayoung.github.io/portfolio/?company=apple-appstore
+elain202@gmail.com  ·  Portfolio: https://elain2.github.io/?company=apple-appstore
 
 **PROFESSIONAL SUMMARY**
 
