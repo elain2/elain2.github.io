@@ -190,7 +190,6 @@ class App {
     `).join('');
 
     this.el.innerHTML = `
-      ${company ? `<div class="company-banner">Customized for <strong>${company.charAt(0).toUpperCase() + company.slice(1)}</strong></div>` : ''}
       ${this.renderNav()}
       <main>
         <section class="hero">
@@ -379,6 +378,7 @@ class App {
           </div>
           <div class="footer-bottom">
             <small style="color:var(--text-secondary)">${i18n.t('footer.copyright')}</small>
+            ${data.currentCompany ? `<small style="color:var(--text-secondary);opacity:0.6">Customized for ${data.currentCompany}</small>` : ''}
             <div class="footer-social">
               <a href="${profile.socialLinks.github}" target="_blank">${icons.github}</a>
               <a href="${profile.socialLinks.linkedin}" target="_blank">${icons.linkedin}</a>
