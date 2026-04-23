@@ -22,7 +22,7 @@ iOS engineer with 7+ years building user-facing features at scale for LY Corpora
 
 ▸  Defined robust error, retry, and cancellation policies for unreliable network conditions; coordinated API contract alignment with backend engineers and product managers.
 
-▸  Led LINE AI Dev 2 (iOS); concurrently serving on the LINE AI Task Force since August 2025\.
+▸  Led LINE AI Dev (iOS); concurrently serving on the LINE AI Task Force since August 2025\.
 
 *Swift · Combine · URLSession · Server-Sent Events · MVVM · TLA (The LINE Architecture) · Coordinator pattern*
 
