@@ -18,10 +18,14 @@
   "apple-appstore": {
     "greeting": "Hi App Store Team, I'm",
     "greetingKo": "안녕하세요 App Store 팀, 저는",
-    "highlightSkills": ["iOS", "Swift", "UIKit", "SwiftUI", "Objective-C", "Networking", "Async Programming"],
+    "customTitle": "Senior iOS UI Engineer",
+    "customTitleKo": "시니어 iOS UI 엔지니어",
+    "customDescription": "7+ years at LINE building polished, user-facing UIs with Swift, Objective-C, UIKit, and SwiftUI. Led iOS teams for camera and AI features serving hundreds of millions of users. Deep expertise in networking protocols, asynchronous programming, and API design. Eager to help developers showcase their apps to customers worldwide.",
+    "customDescriptionKo": "LINE에서 7년 이상 Swift, Objective-C, UIKit, SwiftUI로 사용자 중심 UI를 개발. 수억 명의 사용자를 위한 카메라 및 AI 기능의 iOS 팀을 리드. 네트워킹 프로토콜, 비동기 프로그래밍, API 설계 전문. 전 세계 고객에게 앱을 선보이는 개발자를 돕고 싶습니다.",
+    "highlightSkills": ["iOS", "Swift", "UIKit", "SwiftUI", "Objective-C", "Networking", "Async Programming", "JavaScript/TypeScript"],
     "featuredProjectIds": ["line-avatar", "line-voom-camera", "line-ai-dev2", "line-vision-pro", "theme-park-iot", "unity-2-5d-game"],
     "hideTimeline": false,
-    "customMessage": "7+ years building beautifully crafted, robust UIs at scale with Swift, UIKit, SwiftUI, and AVFoundation. Proven expertise in networking protocols, asynchronous programming, and cross-functional collaboration to deliver polished experiences on time."
+    "customMessage": null
   },
   "google": {
     "greeting": "Hi Google Team, I'm",

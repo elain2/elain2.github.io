@@ -91,6 +91,16 @@ class DataStore {
   getCustomMessage() {
     return this.companyConfig?.customMessage;
   }
+
+  getCustomTitle(lang) {
+    if (!this.companyConfig) return null;
+    return lang === 'ko' ? this.companyConfig.customTitleKo : this.companyConfig.customTitle;
+  }
+
+  getCustomDescription(lang) {
+    if (!this.companyConfig) return null;
+    return lang === 'ko' ? this.companyConfig.customDescriptionKo : this.companyConfig.customDescription;
+  }
 }
 
 // ===== i18n =====
@@ -155,6 +165,8 @@ class App {
     const highlightSkills = data.getHighlightedSkills();
     const customGreeting = data.getCustomGreeting(i18n.lang);
     const customMessage = data.getCustomMessage();
+    const customTitle = data.getCustomTitle(i18n.lang);
+    const customDescription = data.getCustomDescription(i18n.lang);
     const company = data.currentCompany;
 
     const skillsHtml = profile.skills.map(s => {
@@ -196,10 +208,10 @@ class App {
           <div class="hero-content">
             <p class="hero-greeting">${customGreeting || i18n.t('hero.greeting')}</p>
             <h1 class="hero-name">${profile.name}</h1>
-            <p class="hero-title">${i18n.t('hero.title')}</p>
+            <p class="hero-title">${customTitle || i18n.t('hero.title')}</p>
             ${customMessage ? `<div class="hero-custom-message">${customMessage}</div>` : ''}
             <div class="hero-skills">${skillsHtml}</div>
-            <p class="hero-desc">${i18n.t('hero.description')}</p>
+            <p class="hero-desc">${customDescription || i18n.t('hero.description')}</p>
           </div>
         </section>
 
