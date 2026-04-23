@@ -32,8 +32,8 @@ apple:
 apple-appstore:
   greeting: "Hi App Store Team, I'm"
   greetingKo: "안녕하세요 App Store 팀, 저는"
-  customTitle: "Senior iOS UI Engineer"
-  customTitleKo: "시니어 iOS UI 엔지니어"
+  customTitle: "Senior iOS Engineer"
+  customTitleKo: "시니어 iOS 엔지니어"
   customDescription: "7+ years at LINE building polished, user-facing UIs with Swift, Objective-C, UIKit, and SwiftUI. Led iOS teams for camera and AI features serving hundreds of millions of users. Framework-level experience with internal camera/graphics SDK — CI/CD pipelines, Objective-C runtime debugging, and API design. Eager to help developers showcase their apps to customers worldwide."
   customDescriptionKo: "LINE에서 7년 이상 Swift, Objective-C, UIKit, SwiftUI로 사용자 중심 UI를 개발. 수억 명의 사용자를 위한 카메라 및 AI 기능의 iOS 팀을 리드. 내부 카메라/그래픽스 SDK 프레임워크 경험 — CI/CD 파이프라인, Objective-C 런타임 디버깅, API 설계. 전 세계 고객에게 앱을 선보이는 개발자를 돕고 싶습니다."
   highlightSkills:
@@ -45,7 +45,6 @@ apple-appstore:
     - Framework/SDK
     - Networking
     - Async Programming
-    - JavaScript/TypeScript
   featuredProjectIds:
     - line-yuki-framework
     - line-avatar
@@ -74,8 +73,8 @@ apple-appstore:
         descriptionKo: "LINE AI Dev 2 — 실시간 AI 응답을 위한 URLSession 기반 SSE 스트리밍, Combine과 async/await로 리액티브 데이터 흐름. Voom Camera에서 GCD/OperationQueue로 스레드 안전한 비디오 합성."
       - category: "API Design"
         categoryKo: "API 설계"
-        description: "Yuki framework — designed internal SDK APIs consumed by multiple product teams. LINE AI Dev 2 — coordinated API contracts with backend engineers for streaming chat protocol."
-        descriptionKo: "Yuki 프레임워크 — 여러 제품 팀이 사용하는 내부 SDK API 설계. LINE AI Dev 2 — 스트리밍 채팅 프로토콜을 위해 백엔드 엔지니어와 API 계약 조율."
+        description: "LINE VOOM Camera, LINE AI Dev — coordinated API interfaces with backend engineers for streaming chat protocol. Designed public interfaces to provide VOOM Camera and AI features to other LINE services."
+        descriptionKo: "LINE VOOM Camera, LINE AI Dev — 스트리밍 채팅 프로토콜을 위해 백엔드 엔지니어와 API 인터페이스 조율. LINE의 다른 서비스에 VOOM Camera, AI 기능 제공을 위한 Public 인터페이스 설계."
       - category: "Cross-functional collaboration"
         categoryKo: "교차 기능 협업"
         description: "iOS lead for Voom Camera and LINE AI — collaborate with PM, designers, server, and QA across LINE Plus global organizations (JP/KR/TW). Deliver features on time while handling stakeholder expectations."
