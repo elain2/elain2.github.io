@@ -12,7 +12,7 @@ hero.description: "iOS Developer at LINE, currently working on AI-powered featur
 
 # Sections
 skills.title: Skills
-skills.subtitle: iOS Development & Computer Vision
+skills.subtitle: "Swift · Objective-C · TLA (The Layered Architecture) · MVVM<br>OpenGL/Metal · Camera Pipeline · AR/Vision<br>C++ · Performance Tuning · System Design"
 
 education.title: Education
 education.subtitle: Inha University, Computer Science

@@ -12,7 +12,7 @@ hero.description: "LINE에서 AI 기능을 개발하는 iOS 개발자입니다. 
 
 # 섹션
 skills.title: 기술
-skills.subtitle: iOS 개발 & 컴퓨터 비전
+skills.subtitle: "Swift · Objective-C · TLA (The Layered Architecture) · MVVM<br>OpenGL/Metal · Camera Pipeline · AR/Vision<br>C++ · Performance Tuning · System Design"
 
 education.title: 학력
 education.subtitle: 인하대학교, 컴퓨터공학
