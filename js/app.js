@@ -379,6 +379,21 @@ class App {
             <div class="detail-card"><p>${project.detailedDescription}</p></div>
           </div>
 
+          ${project.demoVideo ? `
+          <div class="detail-section">
+            <h3 class="detail-section-title">${i18n.t('project.video') || 'Demo Video'}</h3>
+            <div class="detail-video">
+              <iframe
+                src="https://www.youtube.com/embed/${this.extractYouTubeId(project.demoVideo)}"
+                title="${project.title} Demo"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+          ` : ''}
+
           ${project.images?.length ? `
           <div class="detail-section">
             <h3 class="detail-section-title">${i18n.t('project.images') || 'Design & Architecture'}</h3>
@@ -446,6 +461,16 @@ class App {
 
   attachEvents() {
     document.getElementById('lang-btn')?.addEventListener('click', () => i18n.toggle());
+  }
+
+  extractYouTubeId(url) {
+    // Handle youtu.be/ID format
+    const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+    if (shortMatch) return shortMatch[1];
+    // Handle youtube.com/watch?v=ID format
+    const longMatch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/);
+    if (longMatch) return longMatch[1];
+    return url;
   }
 
   attachFilterEvents() {

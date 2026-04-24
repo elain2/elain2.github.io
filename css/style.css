@@ -323,6 +323,22 @@ img { max-width: 100%; display: block; }
   text-align: center;
   border-top: 1px solid rgba(0,0,0,0.05);
 }
+.detail-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.detail-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* ===== Footer ===== */
 .footer { background: white; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 4rem; }
