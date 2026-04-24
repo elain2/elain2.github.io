@@ -25,8 +25,8 @@
     - url: https://youtu.be/LOmlBy3FSdo
       labelKey: achievements.watchVlog
 
-- titleKey: achievements.kaist.title
-  descKey: achievements.kaist.desc
-  year: "2011-2012"
+- titleKey: achievements.stickersdk.title
+  descKey: achievements.stickersdk.desc
+  year: "2022"
   icon: award
   color: "#34C759"
