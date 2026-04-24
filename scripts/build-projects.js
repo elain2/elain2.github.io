@@ -140,7 +140,7 @@ function parseBody(body) {
 
 function buildProjects() {
   const files = fs.readdirSync(PROJECTS_DIR)
-    .filter(f => f.endsWith('.md'))
+    .filter(f => f.endsWith('.md') && f !== 'README.md')
     .sort();
 
   const projects = [];
