@@ -259,7 +259,7 @@ class App {
               <div class="card-icon" style="background:rgba(0,122,255,0.1)"><span style="color:#007AFF">${icons.code}</span></div>
               <div class="card-title">${i18n.t('skills.title')}</div>
               <div class="skills-grid">
-                ${profile.skills.map(s => `<span class="skill-item">${s}</span>`).join('')}
+                ${(profile.skillsCard || profile.skills).map(s => `<span class="skill-item">${s}</span>`).join('')}
               </div>
             </div>
             <div class="card">

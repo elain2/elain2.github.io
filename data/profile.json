@@ -3,6 +3,18 @@
   "email": "elain202@gmail.com",
   "phone": "[REDACTED]",
   "skills": [
+    "iOS",
+    "Swift",
+    "SwiftUI",
+    "UIKit",
+    "AVFoundation",
+    "Networking",
+    "Async Programming",
+    "visionOS",
+    "Objective-C",
+    "JavaScript/TypeScript"
+  ],
+  "skillsCard": [
     "Swift",
     "Objective-C",
     "TLA",
