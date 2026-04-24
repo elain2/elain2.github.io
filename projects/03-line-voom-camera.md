@@ -2,7 +2,7 @@
 id: line-voom-camera
 title: LINE Voom Camera (iOS)
 category: iOS Development
-thumbnail: https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800
+thumbnail: https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800
 tags:
   - iOS
   - Swift
