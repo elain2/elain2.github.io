@@ -13,6 +13,11 @@ role: Graphics Programmer
 period: 2018
 publication: Korea Information Processing Society 2018
 publicationUrl: https://koreascience.kr/article/CFKO201835372171683.page
+images:
+  - url: images/projects/unity-2-5d-game/camera-system.png
+    caption: 2.5D Camera Rotation System
+  - url: images/projects/unity-2-5d-game/water-shader.png
+    caption: Water Shader Effect
 ---
 
 ## Responsibilities

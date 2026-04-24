@@ -13,6 +13,11 @@ contribution: 100
 description: 3D roller coaster with Catmull-Rom spline track and real-time camera
 role: Solo Developer
 period: 2017
+images:
+  - url: images/projects/roller-coaster-simulation/spline-curve.png
+    caption: Catmull-Rom Spline Track Generation
+  - url: images/projects/roller-coaster-simulation/camera-system.png
+    caption: 1st/3rd Person Camera System
 ---
 
 ## Responsibilities

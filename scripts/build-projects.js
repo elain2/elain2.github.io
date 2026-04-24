@@ -24,23 +24,57 @@ function parseYamlFrontmatter(content) {
   let currentKey = null;
   let inArray = false;
   let arrayItems = [];
+  let currentObject = null;
 
   for (const line of yamlStr.split('\n')) {
-    // Array item
-    if (line.match(/^\s+-\s+/)) {
-      const value = line.replace(/^\s+-\s+/, '').trim();
+    // Array item with object start (e.g., "  - url: value")
+    const arrayObjectMatch = line.match(/^(\s+)-\s+(\w+):\s*(.*)$/);
+    if (arrayObjectMatch) {
+      // Save previous object if exists
+      if (currentObject) {
+        arrayItems.push(currentObject);
+      }
+      currentObject = {};
+      const key = arrayObjectMatch[2];
+      const value = arrayObjectMatch[3].trim();
+      currentObject[key] = value;
+      continue;
+    }
+
+    // Object property continuation (e.g., "    caption: value")
+    const objectPropMatch = line.match(/^(\s{4,})(\w+):\s*(.*)$/);
+    if (objectPropMatch && currentObject) {
+      const key = objectPropMatch[2];
+      const value = objectPropMatch[3].trim();
+      currentObject[key] = value;
+      continue;
+    }
+
+    // Simple array item (e.g., "  - value")
+    const simpleArrayMatch = line.match(/^(\s+)-\s+(.+)$/);
+    if (simpleArrayMatch && !arrayObjectMatch) {
+      // Save previous object if exists
+      if (currentObject) {
+        arrayItems.push(currentObject);
+        currentObject = null;
+      }
+      const value = simpleArrayMatch[2].trim();
       arrayItems.push(value);
       continue;
     }
 
-    // Save previous array if exists
-    if (inArray && currentKey) {
+    // Save previous array if exists (when we hit a new top-level key)
+    if (inArray && currentKey && line.match(/^\w+:/)) {
+      if (currentObject) {
+        arrayItems.push(currentObject);
+        currentObject = null;
+      }
       meta[currentKey] = arrayItems;
       arrayItems = [];
       inArray = false;
     }
 
-    // Key-value pair
+    // Key-value pair at root level
     const kvMatch = line.match(/^(\w+):\s*(.*)$/);
     if (kvMatch) {
       const key = kvMatch[1];
@@ -53,7 +87,6 @@ function parseYamlFrontmatter(content) {
         arrayItems = [];
       } else {
         // Simple value
-        // Handle numbers
         if (/^\d+$/.test(value)) {
           meta[key] = parseInt(value, 10);
         } else {
@@ -63,8 +96,11 @@ function parseYamlFrontmatter(content) {
     }
   }
 
-  // Save last array if exists
+  // Save last array/object if exists
   if (inArray && currentKey) {
+    if (currentObject) {
+      arrayItems.push(currentObject);
+    }
     meta[currentKey] = arrayItems;
   }
 

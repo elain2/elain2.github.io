@@ -10,6 +10,9 @@ contribution: 100
 description: Web service for sharing street cats in your neighborhood
 role: Full Stack Developer
 period: 2016
+images:
+  - url: images/projects/cats-in-your-street/service-architecture.png
+    caption: Service Architecture
 ---
 
 ## Responsibilities

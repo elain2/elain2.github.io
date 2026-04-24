@@ -14,6 +14,11 @@ tags:
 description: Internal camera/graphics framework powering LINE's media features
 role: Framework Engineer
 period: 2019 - 2022
+images:
+  - url: images/projects/line-yuki-framework/ci-cd-pipeline.png
+    caption: CI/CD Pipeline Architecture
+  - url: images/projects/line-yuki-framework/framework-structure.png
+    caption: Framework Module Structure
 ---
 
 ## Responsibilities

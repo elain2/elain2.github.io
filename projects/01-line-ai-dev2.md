@@ -14,6 +14,11 @@ tags:
 description: Building real-time AI chat UI with streaming responses and robust networking
 role: iOS Project Lead
 period: 2025.08 - Present
+images:
+  - url: images/projects/line-ai-dev2/sse-architecture.png
+    caption: SSE Streaming Architecture
+  - url: images/projects/line-ai-dev2/chat-ui-flow.png
+    caption: Real-time Chat UI Flow
 ---
 
 ## Responsibilities

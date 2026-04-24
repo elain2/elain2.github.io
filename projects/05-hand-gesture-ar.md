@@ -15,6 +15,11 @@ role: Researcher (Graduation Thesis)
 period: 2018
 publication: Inha University Computer Science Graduation Thesis
 demoVideo: https://youtu.be/DJrrfm4XU_M
+images:
+  - url: images/projects/hand-gesture-ar/depth-pipeline.png
+    caption: RGB-D Depth Processing Pipeline
+  - url: images/projects/hand-gesture-ar/skeleton-extraction.png
+    caption: 21-Joint Skeleton Extraction
 ---
 
 ## Responsibilities

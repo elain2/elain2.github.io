@@ -16,6 +16,11 @@ role: Firmware & Backend Developer
 period: 2017
 event: SKT IoT Makerthon
 demoVideo: https://www.youtube.com/watch?v=QNpT0Dq2218
+images:
+  - url: images/projects/theme-park-iot/system-architecture.png
+    caption: IoT System Architecture
+  - url: images/projects/theme-park-iot/lpwa-network.png
+    caption: LPWA/LoRa Network Topology
 ---
 
 ## Responsibilities
