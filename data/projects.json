@@ -26,12 +26,8 @@
     "detailedDescription": "Leading iOS development for LINE's in-app AI assistant. Deep expertise in networking protocols (URLSession, SSE), asynchronous programming (Combine, async/await), and building responsive UIs that handle streaming data at scale.",
     "images": [
       {
-        "url": "images/projects/line-ai-dev2/sse-architecture.png",
-        "caption": "SSE Streaming Architecture"
-      },
-      {
-        "url": "images/projects/line-ai-dev2/chat-ui-flow.png",
-        "caption": "Real-time Chat UI Flow"
+        "url": "images/projects/line-ai-dev2/overview.png",
+        "caption": "LINE AI Dev Overview"
       }
     ]
   },
@@ -60,12 +56,8 @@
     "detailedDescription": "Designed and built a visionOS experience that lets LINE users relive shared memories in a 3D gallery using Apple Vision Pro. Demonstrated expertise in SwiftUI, RealityKit, and Apple's latest spatial UI frameworks. Recognized for immediate integration viability into LINE service.",
     "images": [
       {
-        "url": "images/projects/line-vision-pro/immersive-space.png",
-        "caption": "3D Immersive Space Design"
-      },
-      {
-        "url": "images/projects/line-vision-pro/interaction-flow.png",
-        "caption": "Gaze & Gesture Interaction Flow"
+        "url": "images/projects/line-vision-pro/overview.png",
+        "caption": "Immersive Memory Overview"
       }
     ]
   },
@@ -96,12 +88,8 @@
     "detailedDescription": "Led the iOS team for LINE's short-form video product shipped to global users (JP/TW/TH). Deep expertise in UIKit, AVFoundation, Metal, and asynchronous programming with GCD/OperationQueue. Delivered polished camera UI with real-time effects and robust video editing capabilities.",
     "images": [
       {
-        "url": "images/projects/line-voom-camera/camera-pipeline.png",
-        "caption": "AVFoundation Camera Pipeline"
-      },
-      {
-        "url": "images/projects/line-voom-camera/video-composer.png",
-        "caption": "Multi-track Video Composition Architecture"
+        "url": "images/projects/line-voom-camera/overview.png",
+        "caption": "LINE Voom Camera Overview"
       }
     ]
   },
@@ -132,12 +120,8 @@
     "detailedDescription": "Developed LINE Avatar feature for iOS — face recognition-based character creation, customization, and sharing. Built camera capture screens with Vision/CoreImage-based face detection. First production project at LINE Plus, demonstrating strong OOP and architecture design skills.",
     "images": [
       {
-        "url": "images/projects/line-avatar/mvvm-architecture.png",
-        "caption": "MVVM Architecture Pattern"
-      },
-      {
-        "url": "images/projects/line-avatar/face-detection-flow.png",
-        "caption": "Vision Framework Face Detection Flow"
+        "url": "images/projects/line-avatar/overview.png",
+        "caption": "LINE Avatar Overview"
       }
     ]
   },
@@ -169,12 +153,12 @@
     "demoVideo": "https://youtu.be/DJrrfm4XU_M",
     "images": [
       {
-        "url": "images/projects/hand-gesture-ar/depth-pipeline.png",
-        "caption": "RGB-D Depth Processing Pipeline"
+        "url": "images/projects/hand-gesture-ar/overview.png",
+        "caption": "Hand Gesture Recognition Overview"
       },
       {
-        "url": "images/projects/hand-gesture-ar/skeleton-extraction.png",
-        "caption": "21-Joint Skeleton Extraction"
+        "url": "images/projects/hand-gesture-ar/process.png",
+        "caption": "Recognition Process Pipeline"
       }
     ]
   },
@@ -202,12 +186,20 @@
     "publicationUrl": "https://koreascience.kr/article/CFKO201835372171683.page",
     "images": [
       {
-        "url": "images/projects/unity-2-5d-game/camera-system.png",
-        "caption": "2.5D Camera Rotation System"
+        "url": "images/projects/unity-2-5d-game/Water material과 Shader 소스코드.png",
+        "caption": "Water Material & Shader Source Code"
       },
       {
-        "url": "images/projects/unity-2-5d-game/water-shader.png",
-        "caption": "Water Shader Effect"
+        "url": "images/projects/unity-2-5d-game/Bump map이 적용된 벽돌.png",
+        "caption": "Bump Map Applied to Bricks"
+      },
+      {
+        "url": "images/projects/unity-2-5d-game/Particle System을 통한 비 내리는 환경 구현.png",
+        "caption": "Rain Environment via Particle System"
+      },
+      {
+        "url": "images/projects/unity-2-5d-game/ Custom Shader를 통한 색의 가산효과.png",
+        "caption": "Additive Color Effect via Custom Shader"
       }
     ]
   },
@@ -235,12 +227,12 @@
     "contribution": 100,
     "images": [
       {
-        "url": "images/projects/roller-coaster-simulation/spline-curve.png",
-        "caption": "Catmull-Rom Spline Track Generation"
+        "url": "images/projects/roller-coaster-simulation/first-person-view.png",
+        "caption": "First Person View"
       },
       {
-        "url": "images/projects/roller-coaster-simulation/camera-system.png",
-        "caption": "1st/3rd Person Camera System"
+        "url": "images/projects/roller-coaster-simulation/quard-view.png",
+        "caption": "Quad View"
       }
     ]
   },
@@ -268,17 +260,7 @@
     "detailedDescription": "Designed IoT solution to solve theme park problems — payment alerts, inefficient wait times, lost children. Used Low Power Wide Area (LPWA/LoRa) communication to connect small devices across large areas.",
     "contribution": 80,
     "demoVideo": "https://www.youtube.com/watch?v=QNpT0Dq2218",
-    "event": "SKT IoT Makerthon",
-    "images": [
-      {
-        "url": "images/projects/theme-park-iot/system-architecture.png",
-        "caption": "IoT System Architecture"
-      },
-      {
-        "url": "images/projects/theme-park-iot/lpwa-network.png",
-        "caption": "LPWA/LoRa Network Topology"
-      }
-    ]
+    "event": "SKT IoT Makerthon"
   },
   {
     "id": "cats-in-your-street",
@@ -300,8 +282,8 @@
     "contribution": 100,
     "images": [
       {
-        "url": "images/projects/cats-in-your-street/service-architecture.png",
-        "caption": "Service Architecture"
+        "url": "images/projects/cats-in-your-street/overview.png",
+        "caption": "Cats in your Street Overview"
       }
     ]
   },
@@ -329,17 +311,7 @@
       "Collaborated with multiple product teams (Avatar, Voom, Messenger) on framework integration"
     ],
     "period": "2019 - 2022",
-    "detailedDescription": "Yuki is LINE's internal camera and graphics framework used across multiple products. Deep experience with framework-level development, Objective-C runtime debugging, and CI/CD automation. This role built strong foundations for later leading product teams that consumed the framework.",
-    "images": [
-      {
-        "url": "images/projects/line-yuki-framework/ci-cd-pipeline.png",
-        "caption": "CI/CD Pipeline Architecture"
-      },
-      {
-        "url": "images/projects/line-yuki-framework/framework-structure.png",
-        "caption": "Framework Module Structure"
-      }
-    ]
+    "detailedDescription": "Yuki is LINE's internal camera and graphics framework used across multiple products. Deep experience with framework-level development, Objective-C runtime debugging, and CI/CD automation. This role built strong foundations for later leading product teams that consumed the framework."
   },
   {
     "tags": [],

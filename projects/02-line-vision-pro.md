@@ -14,10 +14,8 @@ description: Award-winning visionOS experience with SwiftUI and RealityKit
 role: iOS Developer
 period: 2024.09
 images:
-  - url: images/projects/line-vision-pro/immersive-space.png
-    caption: 3D Immersive Space Design
-  - url: images/projects/line-vision-pro/interaction-flow.png
-    caption: Gaze & Gesture Interaction Flow
+  - url: images/projects/line-vision-pro/overview.png
+    caption: Immersive Memory Overview
 ---
 
 ## Responsibilities

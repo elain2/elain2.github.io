@@ -14,10 +14,14 @@ period: 2018
 publication: Korea Information Processing Society 2018
 publicationUrl: https://koreascience.kr/article/CFKO201835372171683.page
 images:
-  - url: images/projects/unity-2-5d-game/camera-system.png
-    caption: 2.5D Camera Rotation System
-  - url: images/projects/unity-2-5d-game/water-shader.png
-    caption: Water Shader Effect
+  - url: images/projects/unity-2-5d-game/Water material과 Shader 소스코드.png
+    caption: Water Material & Shader Source Code
+  - url: images/projects/unity-2-5d-game/Bump map이 적용된 벽돌.png
+    caption: Bump Map Applied to Bricks
+  - url: images/projects/unity-2-5d-game/Particle System을 통한 비 내리는 환경 구현.png
+    caption: Rain Environment via Particle System
+  - url: images/projects/unity-2-5d-game/ Custom Shader를 통한 색의 가산효과.png
+    caption: Additive Color Effect via Custom Shader
 ---
 
 ## Responsibilities

@@ -16,10 +16,8 @@ description: Face-driven avatar creation with camera capture and Vision framewor
 role: iOS Developer
 period: 2019 - 2022
 images:
-  - url: images/projects/line-avatar/mvvm-architecture.png
-    caption: MVVM Architecture Pattern
-  - url: images/projects/line-avatar/face-detection-flow.png
-    caption: Vision Framework Face Detection Flow
+  - url: images/projects/line-avatar/overview.png
+    caption: LINE Avatar Overview
 ---
 
 ## Responsibilities

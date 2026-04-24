@@ -15,10 +15,8 @@ description: Led AVFoundation-based camera with real-time effects and multi-trac
 role: Team Lead
 period: 2023 - 2026.04
 images:
-  - url: images/projects/line-voom-camera/camera-pipeline.png
-    caption: AVFoundation Camera Pipeline
-  - url: images/projects/line-voom-camera/video-composer.png
-    caption: Multi-track Video Composition Architecture
+  - url: images/projects/line-voom-camera/overview.png
+    caption: LINE Voom Camera Overview
 ---
 
 ## Responsibilities
