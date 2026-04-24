@@ -258,7 +258,9 @@ class App {
             <div class="card">
               <div class="card-icon" style="background:rgba(0,122,255,0.1)"><span style="color:#007AFF">${icons.code}</span></div>
               <div class="card-title">${i18n.t('skills.title')}</div>
-              <div class="card-subtitle">${i18n.t('skills.subtitle')}</div>
+              <div class="skills-grid">
+                ${profile.skills.map(s => `<span class="skill-item">${s}</span>`).join('')}
+              </div>
             </div>
             <div class="card">
               <div class="card-icon" style="background:rgba(88,86,214,0.1)"><span style="color:#5856D6">${icons.briefcase}</span></div>

@@ -3,16 +3,16 @@
   "email": "elain202@gmail.com",
   "phone": "[REDACTED]",
   "skills": [
-    "iOS",
     "Swift",
-    "SwiftUI",
-    "UIKit",
-    "AVFoundation",
-    "Networking",
-    "Async Programming",
-    "visionOS",
     "Objective-C",
-    "JavaScript/TypeScript"
+    "TLA",
+    "MVVM",
+    "OpenGL/Metal",
+    "Camera Pipeline",
+    "AR/Vision",
+    "C++",
+    "Performance Tuning",
+    "System Design"
   ],
   "socialLinks": {
     "github": "https://github.com",
