@@ -364,15 +364,12 @@ img { max-width: 100%; display: block; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .skill-item {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--text-secondary);
-  padding: 0.375rem 0.5rem;
+  padding: 0.375rem 0.4rem;
   background: rgba(0,0,0,0.03);
   border-radius: 0.375rem;
   text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* ===== Role Mapping ===== */
