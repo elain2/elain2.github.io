@@ -448,15 +448,11 @@ class App {
         <div class="container footer-inner">
           <h2 class="footer-title">${i18n.t('footer.connect')}</h2>
           <p class="footer-subtitle">${i18n.t('contact.subtitle')}</p>
-          <div class="footer-contacts">
+          <div class="footer-contacts footer-contacts-single">
             <a href="mailto:${profile.email}" class="footer-contact">
               <div class="footer-contact-icon" style="background:rgba(0,122,255,0.1)"><span style="color:#007AFF">${icons.mail}</span></div>
               <div><small style="color:var(--text-secondary)">Email</small><div>${profile.email}</div></div>
             </a>
-            <div class="footer-contact">
-              <div class="footer-contact-icon" style="background:rgba(52,199,89,0.1)"><span style="font-size:1.5rem">📱</span></div>
-              <div><small style="color:var(--text-secondary)">Phone</small><div>${profile.phone}</div></div>
-            </div>
           </div>
           <div class="footer-bottom">
             <small style="color:var(--text-secondary)">${i18n.t('footer.copyright')}</small>

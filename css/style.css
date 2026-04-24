@@ -354,6 +354,7 @@ img { max-width: 100%; display: block; }
 .footer-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
 .footer-subtitle { color: var(--text-secondary); margin-bottom: 2rem; }
 .footer-contacts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem; }
+.footer-contacts-single { grid-template-columns: 1fr; max-width: 20rem; margin-left: auto; margin-right: auto; }
 @media (max-width: 768px) { .footer-contacts { grid-template-columns: 1fr; } }
 .footer-contact {
   display: flex;
