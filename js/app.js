@@ -379,6 +379,17 @@ class App {
             <div class="detail-card"><p>${project.detailedDescription}</p></div>
           </div>
 
+          ${project.localVideo ? `
+          <div class="detail-section">
+            <h3 class="detail-section-title">${i18n.t('project.video') || 'Demo Video'}</h3>
+            <div class="detail-video detail-video-local">
+              <video controls playsinline>
+                <source src="${project.localVideo}" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          ` : ''}
+
           ${project.demoVideo ? `
           <div class="detail-section">
             <h3 class="detail-section-title">${i18n.t('project.video') || 'Demo Video'}</h3>

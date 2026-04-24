@@ -13,6 +13,7 @@ tags:
 description: Award-winning visionOS experience with SwiftUI and RealityKit
 role: iOS Developer
 period: 2024.09
+localVideo: images/projects/line-vision-pro/demo.mp4
 images:
   - url: images/projects/line-vision-pro/overview.png
     caption: Immersive Memory Overview

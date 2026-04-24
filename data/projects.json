@@ -54,6 +54,7 @@
     ],
     "period": "2024.09",
     "detailedDescription": "Designed and built a visionOS experience that lets LINE users relive shared memories in a 3D gallery using Apple Vision Pro. Demonstrated expertise in SwiftUI, RealityKit, and Apple's latest spatial UI frameworks. Recognized for immediate integration viability into LINE service.",
+    "localVideo": "images/projects/line-vision-pro/demo.mp4",
     "images": [
       {
         "url": "images/projects/line-vision-pro/overview.png",

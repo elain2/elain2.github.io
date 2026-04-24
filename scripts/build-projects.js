@@ -168,6 +168,7 @@ function buildProjects() {
     if (meta.publication) project.publication = meta.publication;
     if (meta.publicationUrl) project.publicationUrl = meta.publicationUrl;
     if (meta.demoVideo) project.demoVideo = meta.demoVideo;
+    if (meta.localVideo) project.localVideo = meta.localVideo;
     if (meta.event) project.event = meta.event;
     if (meta.images) project.images = meta.images;
 

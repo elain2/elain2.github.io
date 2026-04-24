@@ -339,6 +339,14 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 100%;
 }
+.detail-video-local {
+  padding-bottom: 0;
+  position: relative;
+}
+.detail-video-local video {
+  width: 100%;
+  display: block;
+}
 
 /* ===== Footer ===== */
 .footer { background: white; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 4rem; }
