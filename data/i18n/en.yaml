@@ -65,6 +65,7 @@ projects.back: Back
 project.tech: Technology Stack
 project.role: My Role
 project.about: About
+project.images: Design & Architecture
 
 # Footer
 footer.connect: Let's Connect

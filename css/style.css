@@ -307,6 +307,22 @@ img { max-width: 100%; display: block; }
 .detail-section { margin-bottom: 2rem; }
 .detail-section-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
 .detail-card { background: white; border-radius: var(--radius); padding: 1.5rem; }
+.detail-images { display: flex; flex-direction: column; gap: 1.5rem; }
+.detail-image-item {
+  margin: 0;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.detail-image-item img { width: 100%; display: block; }
+.detail-image-item figcaption {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
 
 /* ===== Footer ===== */
 .footer { background: white; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 4rem; }

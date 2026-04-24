@@ -378,6 +378,20 @@ class App {
             <h3 class="detail-section-title">${i18n.t('project.about')}</h3>
             <div class="detail-card"><p>${project.detailedDescription}</p></div>
           </div>
+
+          ${project.images?.length ? `
+          <div class="detail-section">
+            <h3 class="detail-section-title">${i18n.t('project.images') || 'Design & Architecture'}</h3>
+            <div class="detail-images">
+              ${project.images.map(img => `
+                <figure class="detail-image-item">
+                  <img src="${img.url}" alt="${img.caption || ''}" loading="lazy">
+                  ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ''}
+                </figure>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
         </div>
       </main>
       ${this.renderFooter(profile)}

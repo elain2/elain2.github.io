@@ -133,6 +133,7 @@ function buildProjects() {
     if (meta.publicationUrl) project.publicationUrl = meta.publicationUrl;
     if (meta.demoVideo) project.demoVideo = meta.demoVideo;
     if (meta.event) project.event = meta.event;
+    if (meta.images) project.images = meta.images;
 
     projects.push(project);
     console.log(`Parsed: ${file}`);
