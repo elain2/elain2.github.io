@@ -267,11 +267,6 @@ class App {
               <div class="card-title">${i18n.t('career.title')}</div>
               <div class="card-subtitle">${i18n.t('career.subtitle')}</div>
             </div>
-            <a href="#contact" class="card bento-wide">
-              <div class="card-icon" style="background:rgba(255,149,0,0.1)"><span style="color:#FF9500">${icons.mail}</span></div>
-              <div class="card-title">${i18n.t('contact.title')}</div>
-              <div class="card-subtitle">${profile.email}</div>
-            </a>
           </div>
         </section>
 
@@ -428,7 +423,6 @@ class App {
             ${data.currentCompany ? `<small style="color:var(--text-secondary);opacity:0.6">Customized for ${data.currentCompany}</small>` : ''}
             <div class="footer-social">
               <a href="${profile.socialLinks.github}" target="_blank">${icons.github}</a>
-              <a href="${profile.socialLinks.linkedin}" target="_blank">${icons.linkedin}</a>
             </div>
           </div>
         </div>
