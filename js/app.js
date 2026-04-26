@@ -167,7 +167,7 @@ class App {
     } else {
       await this.renderHome();
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   // ===== Render Home =====
