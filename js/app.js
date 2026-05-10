@@ -20,12 +20,23 @@ const icons = {
   lightbulb: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>'
 };
 
+// ===== Mermaid Init =====
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'neutral',
+    securityLevel: 'loose',
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+  });
+}
+
 // ===== Data Store =====
 class DataStore {
   constructor() {
     this.cache = {};
     this.companyConfig = null;
     this.currentCompany = null;
+    this.mdCache = {};
   }
 
   async load(name) {
@@ -38,6 +49,53 @@ class DataStore {
       console.error(`Load failed: ${name}`, e);
       return null;
     }
+  }
+
+  async loadMarkdown(id) {
+    console.log('loadMarkdown called with id:', id);
+    if (this.mdCache[id]) return this.mdCache[id];
+    try {
+      // Try to find the markdown file
+      const files = await this.getProjectFiles();
+      const file = files.find(f => f.includes(id));
+      console.log('Found file:', file);
+      if (!file) return null;
+
+      const res = await fetch(`projects/${file}`);
+      console.log('Fetch response:', res.status);
+      if (!res.ok) return null;
+      const text = await res.text();
+      console.log('Markdown text length:', text.length);
+
+      // Parse frontmatter and content
+      const match = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+      if (match) {
+        this.mdCache[id] = match[2].trim();
+        console.log('Parsed content length:', this.mdCache[id].length);
+        return this.mdCache[id];
+      }
+      return text;
+    } catch (e) {
+      console.error(`Load markdown failed: ${id}`, e);
+      return null;
+    }
+  }
+
+  async getProjectFiles() {
+    // Return known project file names
+    return [
+      '01-shortform-poc.md',
+      '02-line-ai-dev2.md',
+      '03-line-vision-pro.md',
+      '04-line-voom-camera.md',
+      '05-line-avatar.md',
+      '06-hand-gesture-ar.md',
+      '07-unity-2-5d-game.md',
+      '08-roller-coaster-simulation.md',
+      '09-theme-park-iot.md',
+      '10-cats-in-your-street.md',
+      '11-line-yuki-framework.md'
+    ];
   }
 
   getCompanyFromUrl() {
@@ -337,6 +395,7 @@ class App {
 
   // ===== Render Detail =====
   async renderDetail(id) {
+    console.log('renderDetail called with id:', id);
     const project = await data.getProjectById(id);
     const profile = await data.getProfile();
     if (!project) {
@@ -344,8 +403,73 @@ class App {
       return;
     }
 
+    // Load markdown content
+    const mdContent = await data.loadMarkdown(id);
+
     const tagsHtml = project.tags.map(t => `<span class="badge badge-default">${t}</span>`).join('');
     const respHtml = project.responsibilities?.map(r => `<li style="color:var(--text-secondary);margin-bottom:0.5rem">• ${r}</li>`).join('') || '';
+
+    // Render markdown with mermaid support
+    let renderedMarkdown = '';
+    console.log('mdContent loaded:', !!mdContent, 'marked available:', typeof marked !== 'undefined');
+    if (mdContent && typeof marked !== 'undefined') {
+      // Skip frontmatter sections (Responsibilities, About) already shown
+      let content = mdContent;
+      content = content.replace(/^## Responsibilities[\s\S]*?(?=^## |^---|\Z)/m, '');
+      content = content.replace(/^## About[\s\S]*?(?=^## |^---|\Z)/m, '');
+      content = content.replace(/^## Responsibilities \(한국어\)[\s\S]*?(?=^## |^---|\Z)/m, '');
+      content = content.replace(/^## About \(한국어\)[\s\S]*?(?=^## |^---|\Z)/m, '');
+      content = content.replace(/^---\s*$/gm, '').trim();
+
+      // Filter language-specific content sections
+      // Keep content matching current language, remove other language content
+      const currentLang = i18n.lang;
+      const otherLang = currentLang === 'en' ? 'ko' : 'en';
+
+      // Remove content for other language
+      const otherLangRegex = new RegExp(`<!-- lang:${otherLang} -->[\\s\\S]*?<!-- \\/lang:${otherLang} -->`, 'g');
+      content = content.replace(otherLangRegex, '');
+
+      // Remove language markers for current language (keep the content)
+      content = content.replace(new RegExp(`<!-- lang:${currentLang} -->`, 'g'), '');
+      content = content.replace(new RegExp(`<!-- \\/lang:${currentLang} -->`, 'g'), '');
+
+      if (content) {
+        // Extract mermaid blocks and replace with placeholders
+        // Supports: ```mermaid (neutral), ```mermaid-en (English), ```mermaid-ko (Korean)
+        const mermaidBlocks = [];
+        const currentLang = i18n.lang;
+        console.log('Processing mermaid blocks for lang:', currentLang);
+
+        content = content.replace(/```mermaid(-(?:en|ko))?\n([\s\S]*?)```/g, (match, langSuffix, code) => {
+          const blockLang = langSuffix ? langSuffix.slice(1) : null; // 'en', 'ko', or null
+          console.log('Found mermaid block:', blockLang || 'neutral', '- include:', !blockLang || blockLang === currentLang);
+
+          // Include block if: no language suffix (neutral) OR matches current language
+          if (!blockLang || blockLang === currentLang) {
+            const index = mermaidBlocks.length;
+            mermaidBlocks.push(code.trim());
+            return `%%MERMAID_PLACEHOLDER_${index}%%`;
+          }
+          // Skip blocks for other languages
+          return '';
+        });
+
+        // Parse markdown
+        renderedMarkdown = marked.parse(content);
+
+        // Restore mermaid blocks
+        mermaidBlocks.forEach((code, index) => {
+          renderedMarkdown = renderedMarkdown.replace(
+            `%%MERMAID_PLACEHOLDER_${index}%%`,
+            `<div class="mermaid">${code}</div>`
+          );
+        });
+
+        console.log('Rendered markdown length:', renderedMarkdown.length);
+        console.log('Mermaid blocks found:', mermaidBlocks.length, 'for lang:', currentLang);
+      }
+    }
 
     this.el.innerHTML = `
       ${this.renderNav()}
@@ -378,6 +502,29 @@ class App {
             <h3 class="detail-section-title">${i18n.t('project.about')}</h3>
             <div class="detail-card"><p>${project.detailedDescription}</p></div>
           </div>
+
+          ${project.demoVideos?.length ? `
+          <div class="detail-section">
+            <h3 class="detail-section-title">${i18n.t('project.demoVideos') || 'Demo Videos'}</h3>
+            <div class="demo-videos-grid">
+              ${project.demoVideos.map(video => `
+                <div class="demo-video-item">
+                  <video controls playsinline>
+                    <source src="${video.url}" type="video/mp4">
+                  </video>
+                  ${video.caption ? `<p class="demo-video-caption">${i18n.lang === 'ko' && video.caption_ko ? video.caption_ko : video.caption}</p>` : ''}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
+
+          ${renderedMarkdown ? `
+          <div class="detail-section">
+            <h3 class="detail-section-title">${i18n.t('project.details') || 'Technical Details'}</h3>
+            <div class="detail-card markdown-content">${renderedMarkdown}</div>
+          </div>
+          ` : ''}
 
           ${project.localVideo ? `
           <div class="detail-section">
@@ -423,6 +570,34 @@ class App {
       ${this.renderFooter(profile)}
     `;
     this.attachEvents();
+
+    // Initialize mermaid diagrams
+    this.renderMermaid();
+  }
+
+  async renderMermaid() {
+    if (typeof mermaid === 'undefined') return;
+
+    const elements = document.querySelectorAll('.mermaid');
+    if (elements.length === 0) return;
+
+    try {
+      // For mermaid 10+
+      if (mermaid.run) {
+        await mermaid.run({ nodes: elements });
+      } else {
+        // For older versions
+        mermaid.init(undefined, elements);
+      }
+    } catch (e) {
+      console.error('Mermaid rendering error:', e);
+    }
+  }
+
+  escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
   }
 
   // ===== Common Components =====

@@ -459,3 +459,138 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
   color: var(--text-secondary);
 }
+
+/* ===== Markdown Content ===== */
+.markdown-content {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.markdown-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0,122,255,0.2);
+}
+.markdown-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--primary);
+}
+.markdown-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+.markdown-content p {
+  margin: 1rem 0;
+  color: var(--text-secondary);
+}
+.markdown-content ul, .markdown-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+.markdown-content li {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+.markdown-content ul li { list-style-type: disc; }
+.markdown-content ol li { list-style-type: decimal; }
+.markdown-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.markdown-content code {
+  background: rgba(0,0,0,0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 0.85em;
+}
+.markdown-content pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.markdown-content th, .markdown-content td {
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  text-align: left;
+}
+.markdown-content th {
+  background: rgba(0,122,255,0.05);
+  font-weight: 600;
+}
+.markdown-content tr:nth-child(even) {
+  background: rgba(0,0,0,0.02);
+}
+.markdown-content hr {
+  border: none;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin: 2rem 0;
+}
+
+/* ===== Mermaid Diagrams ===== */
+.mermaid {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .mermaid {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Demo Videos Grid ===== */
+.demo-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.demo-video-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.demo-video-item video {
+  width: 100%;
+  display: block;
+}
+.demo-video-caption {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-align: center;
+  background: rgba(0,0,0,0.02);
+  margin: 0;
+}
