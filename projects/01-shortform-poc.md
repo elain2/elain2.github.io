@@ -16,7 +16,7 @@ tags:
 description: End-to-end pipeline for automatic shortform video generation via LLM-based media analysis and template matching
 description_ko: LLM 기반 미디어 분석과 템플릿 매칭을 통한 숏폼 영상 자동 생성 파이프라인
 role: iOS Developer
-period: 2025.12 - 2026.05
+period: 2025.04 - 2026.05
 demoVideos:
   - url: images/projects/shortform-poc/demo-hamburg.mov
     caption: Hamburg Demo

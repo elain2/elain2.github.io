@@ -34,7 +34,7 @@
       "PIP(Picture-in-Picture) 기반 백그라운드 생성 진행률 UI 구현",
       "7개 미디어셋에 대한 품질 검증 및 토큰 사용량/비용 분석"
     ],
-    "period": "2025.12 - 2026.05",
+    "period": "2025.04 - 2026.05",
     "detailedDescription": "A PoC project that automatically analyzes photos/videos shared in messenger chat rooms using AI, matches them to optimal shortform video templates, and generates completed shortform videos. The core focus is leveraging LLM's contextual understanding to comprehend media composition, mood, and narrative flow, then optimally place them into template slots.",
     "detailedDescription_ko": "메신저 채팅방에서 공유된 사진/동영상을 AI가 자동으로 분석하여, 최적의 숏폼 영상 템플릿에 매칭하고 완성된 숏폼을 생성하는 PoC 프로젝트. LLM의 \"맥락을 읽는 능력\"을 적극 활용하여 미디어의 구도, 분위기, 서사적 흐름을 이해하고 템플릿 슬롯에 최적 배치하는 것이 핵심.",
     "demoVideos": [
