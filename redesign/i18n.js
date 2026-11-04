@@ -129,7 +129,7 @@ const PAGE_EN = {
   'about.alt': 'Freediving with long fins over a coral reef',
   'about.caption': '<span>DIVE</span> Over the reef · Photo by Leeknow',
   'about.eyebrow': '-5m · About me',
-  'about.quote': 'People I work with<br>call me <em>“the passionate one.”</em>',
+  'about.quote': 'When I care about something,<br>I <em>hold my breath and go all the way down.</em>',
   'about.body': 'I love work with results you can see, like a camera pipeline. I stay with a problem until every camera frame and every line of a streaming response comes out smooth.',
   'about.wwdc': 'WWDC 2023 coverage',
   'about.hackday': 'LY HACK DAY award',
