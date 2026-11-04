@@ -21,7 +21,7 @@ images:
 
 ## Responsibilities
 
-- Architected iOS client module handling response streaming, conversation state, and network/cache optimization for hundreds of millions of DAUs
+- Architected iOS client module handling response streaming, conversation state, and network/cache optimization for a service with over 10 million users
 - Implemented URLSession-based Server-Sent Events (SSE) streaming for real-time AI responses
 - Developed Markdown Parser and NSAttributedString-based Renderer for rich text display
 - Defined robust error, retry, and cancellation policies for unreliable network conditions
