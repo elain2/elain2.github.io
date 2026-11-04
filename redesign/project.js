@@ -165,7 +165,8 @@ function mediaSection(p, heroImage) {
     <figure class="clip"><video src="${esc(v.url)}" controls playsinline preload="metadata"></video>
       ${v.caption ? `<figcaption>${esc(ko(v, 'caption'))}</figcaption>` : ''}</figure>`));
   if (p.localVideo) {
-    items.push(`<figure class="clip"><video src="${esc(p.localVideo)}" controls playsinline preload="metadata"></video></figure>`);
+    const poster = p.localVideoPoster ? ` poster="${esc(p.localVideoPoster)}"` : '';
+    items.push(`<figure class="clip"><video src="${esc(p.localVideo)}"${poster} controls playsinline preload="metadata"></video></figure>`);
   }
   const yt = p.demoVideo && youTubeId(p.demoVideo);
   if (yt) {

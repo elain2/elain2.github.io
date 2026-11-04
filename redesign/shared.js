@@ -132,6 +132,15 @@ function startWater(options = {}) {
   }, { passive: true });
   window.addEventListener('resize', measure);
   window.addEventListener('load', measure);
+  // Images, videos and diagrams that load late change section offsets.
+  if ('ResizeObserver' in window) {
+    let pending = false;
+    new ResizeObserver(() => {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(() => { measure(); pending = false; });
+    }).observe(document.querySelector('main'));
+  }
 
   document.addEventListener('click', (e) => {
     if (e.target.closest('.ascend')) window.scrollTo({ top: 0, behavior: 'smooth' });
