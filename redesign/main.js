@@ -17,13 +17,13 @@ const ko = (p, key) => p[`${key}_ko`] || p[key];
 
 // Only use images that live in this repo; remote stock photos are skipped.
 function projectImage(p) {
-  if (p.thumbnail && p.thumbnail.startsWith('images/')) return `../${p.thumbnail}`;
+  if (p.thumbnail && p.thumbnail.startsWith('images/')) return p.thumbnail;
   const local = (p.images || []).find((img) => img.url.startsWith('images/'));
-  return local ? `../${local.url}` : null;
+  return local ? local.url : null;
 }
 
 function detailLink(p) {
-  return `../#/projects/${p.id}`;
+  return `classic.html#/projects/${p.id}`;
 }
 
 function renderFeatured(projects) {
@@ -88,7 +88,7 @@ async function loadContent() {
   try {
     const [projects, timeline, achievements, t] = await Promise.all(
       ['projects', 'timeline', 'achievements', 'i18n/ko'].map((f) =>
-        fetch(`../data/${f}.json`, { cache: 'no-cache' }).then((r) => {
+        fetch(`data/${f}.json`, { cache: 'no-cache' }).then((r) => {
           if (!r.ok) throw new Error(`${f}.json: ${r.status}`);
           return r.json();
         })

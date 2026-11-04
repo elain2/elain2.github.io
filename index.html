@@ -1,25 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kayoung Lee - iOS Developer at LINE">
-  <title>Kayoung Lee | iOS Developer</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👩‍💻</text></svg>">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <meta name="description" content="Kayoung Lee — iOS engineer who builds cameras, and carries one.">
+  <title>Kayoung Lee — iOS Engineer</title>
+  <script>
+    // Links made for the old site (?company=, ?c=, #/projects/...) still open it.
+    (function () {
+      var q = new URLSearchParams(location.search);
+      if (q.has('company') || q.has('c') || location.hash.indexOf('#/') === 0) {
+        location.replace('classic.html' + location.search + location.hash);
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="redesign/style.css">
 </head>
 <body>
-  <div id="app">
-    <div style="min-height:100vh;display:flex;align-items:center;justify-content:center">
-      <div style="text-align:center">
-        <div style="width:40px;height:40px;border:3px solid #007AFF;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1rem"></div>
-        <p style="color:#86868B">Loading...</p>
+  <!-- Fixed chrome -->
+  <header class="topbar">
+    <a href="#surface" class="mark">KAYOUNG LEE</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#log">Log</a>
+      <a href="#deep">Contact</a>
+    </nav>
+  </header>
+
+  <aside class="gauge" aria-hidden="true">
+    <span class="gauge-value"><span id="depth">0</span><small>m</small></span>
+    <span class="gauge-track"><span class="gauge-dot" id="gauge-dot"></span></span>
+  </aside>
+
+  <div class="bubbles" aria-hidden="true"></div>
+
+  <main>
+    <!-- 0m · Surface -->
+    <section id="surface" class="surface" data-bg="#f4f6f7" data-depth="0">
+      <div class="surface-text">
+        <p class="eyebrow">iOS Engineer · LINE · Since 2019</p>
+        <h1>카메라를 만드는 사람이<br>카메라를 듭니다.</h1>
+        <p class="serif-sub">I build cameras for a living — and carry one everywhere else.</p>
+        <p class="lede">LINE 개발자. 수억 명이 쓰는 카메라와 아바타를 만들었고, 지금은 AI를 만듭니다.</p>
+        <a href="#shore" class="dive-hint">아래로 잠수하기 <span>↓</span></a>
       </div>
-    </div>
-    <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
-  </div>
-  <script src="js/app.js"></script>
+      <figure class="surface-photo">
+        <img src="images/photos/self-portrait.jpg" alt="거울 앞에서 카메라를 든 셀프 포트레이트">
+        <figcaption><span>FR 06</span> 오키나와, 거울 앞</figcaption>
+      </figure>
+    </section>
+
+    <!-- Shoreline · photo strip -->
+    <section id="shore" class="shore" data-bg="#f4f6f7" data-depth="0">
+      <div class="section-head">
+        <p class="eyebrow">수면 위</p>
+        <p class="note">직접 찍고 보정한 사진들. 남들이 안 쓰는 구도를 좋아합니다.</p>
+      </div>
+      <div class="strip" tabindex="0" aria-label="사진 모음, 가로로 스크롤">
+        <figure><img loading="lazy" src="images/photos/taxis.jpg" alt="오키나와의 노란 택시들"><figcaption><span>FR 03</span> 나하, 신호 대기</figcaption></figure>
+        <figure><img loading="lazy" src="images/photos/window-sea.jpg" alt="창 너머 바다가 보이는 식당"><figcaption><span>FR 07</span> 창가 자리</figcaption></figure>
+        <figure><img loading="lazy" src="images/photos/white-cat.jpg" alt="역광 속 하얀 고양이"><figcaption><span>FR 13</span> 우리 집 감독관</figcaption></figure>
+        <figure><img loading="lazy" src="images/photos/glass-boat.jpg" alt="해변의 글라스보트 선착장"><figcaption><span>FR 05</span> Glass boat station</figcaption></figure>
+        <figure><img loading="lazy" src="images/photos/hillside.jpg" alt="해 질 녘 언덕 아래 마을"><figcaption><span>FR 11</span> 차창 너머</figcaption></figure>
+        <figure><img loading="lazy" src="images/photos/parade.jpg" alt="거리 축제 행렬"><figcaption><span>FR 02</span> 국제거리 퍼레이드</figcaption></figure>
+        <figure><img loading="lazy" src="images/photos/naha-traffic.jpg" alt="도심 차량 행렬"><figcaption><span>FR 01</span> 앞차의 뒷모습</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Waterline -->
+    <section class="waterline" data-bg="#dbe9ee" data-depth="2">
+      <img loading="lazy" src="images/photos/boat-poles.jpg" alt="바다 위로 솟은 나무 기둥들">
+      <p class="waterline-text">여기서부터 들어갑니다.<span>이제 조금 깊은 이야기.</span></p>
+    </section>
+
+    <!-- -5m · About -->
+    <section id="about" class="about" data-bg="#a9cfdc" data-depth="5">
+      <figure class="about-photo">
+        <img loading="lazy" src="images/photos/freedive-reef.jpg" alt="산호초 위를 롱핀으로 헤엄치는 프리다이빙 중인 모습">
+        <figcaption><span>DIVE</span> 산호초 위에서 · Photo by Leeknow</figcaption>
+      </figure>
+      <div class="about-text">
+        <p class="eyebrow">-5m · 나에 대해</p>
+        <blockquote>같이 일한 사람들은 저를<br><em>“열정 있는 사람”</em>이라고 부릅니다.</blockquote>
+        <p>카메라 파이프라인처럼 눈에 보이는 결과물을 만드는 일을 좋아합니다. 카메라 프레임 한 장, 스트리밍 응답 한 줄이 매끄럽게 나올 때까지 끝까지 붙잡는 편입니다.</p>
+        <dl class="facts">
+          <div><dt>2019–</dt><dd>LINE iOS</dd></div>
+          <div><dt>2023</dt><dd>WWDC 커버리지 출연</dd></div>
+          <div><dt>2024</dt><dd>LY HACK DAY 수상</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- -12m · Work -->
+    <section id="work" class="work" data-bg="#1f5f7d" data-depth="12">
+      <div class="section-head">
+        <p class="eyebrow">-12m · Work</p>
+        <h2>만들어 온 것들</h2>
+      </div>
+      <div id="featured" class="featured"></div>
+    </section>
+
+    <!-- Break photo -->
+    <section class="break" data-bg="#123f59" data-depth="20">
+      <img loading="lazy" src="images/photos/under-boat.jpg" alt="배 아래에서 수면을 올려다보는 다이버">
+    </section>
+
+    <!-- -20m · Side project -->
+    <section id="play" class="play" data-bg="#0f3550" data-depth="20">
+      <div class="play-text">
+        <p class="eyebrow">-20m · 그냥 좋아서 만든 것</p>
+        <h2>고양이 사랑방</h2>
+        <p class="serif-sub">project cat-ddong</p>
+        <p>설문 13개에 답하면 <strong>고양이가 된 나</strong>가 나옵니다. 귀 모양은 내가 남의 이야기를 듣는 방식에서, 꼬리는 기분이 티 나는 정도에서 정해집니다. 설문만으로 약 37만 가지 고양이가 나옵니다.</p>
+        <p class="quiet">“귀엽지만 쓸 데 없고, 내가 즐거운 것을 만들자.”</p>
+        <div class="links">
+          <a href="https://elain2.github.io/cat-ddong/" target="_blank" rel="noopener">해보기 ↗</a>
+          <a href="https://github.com/elain2/cat-ddong" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <a class="play-image" href="https://elain2.github.io/cat-ddong/" target="_blank" rel="noopener">
+        <img loading="lazy" src="images/projects/cat-ddong/og.png" alt="고양이 사랑방 미리보기">
+      </a>
+    </section>
+
+    <!-- -24m · Archive -->
+    <section id="archive" class="archive" data-bg="#0b2a40" data-depth="24">
+      <div class="section-head">
+        <p class="eyebrow">-24m · 더 깊은 기록</p>
+        <h2>연구와 학교 프로젝트</h2>
+      </div>
+      <ol id="archive-list" class="archive-list"></ol>
+    </section>
+
+    <!-- -32m · Log -->
+    <section id="log" class="log" data-bg="#06192a" data-depth="32">
+      <div class="section-head">
+        <p class="eyebrow">-32m · Log</p>
+        <h2>잠수 기록</h2>
+      </div>
+      <div class="log-grid">
+        <ol id="timeline" class="timeline"></ol>
+        <ul id="media" class="media"></ul>
+      </div>
+    </section>
+
+    <!-- -40m · Deep / Contact -->
+    <section id="deep" class="deep" data-bg="#000000" data-depth="40">
+      <img class="deep-bg" loading="lazy" src="images/photos/jellyfish.jpg" alt="">
+      <div class="deep-inner">
+        <p class="eyebrow">-40m</p>
+        <h2>깊은 데까지 와 주셨네요.<br>고마워요.</h2>
+        <a class="mail" href="mailto:elain202@gmail.com">elain202@gmail.com</a>
+        <ul class="socials">
+          <li><a href="https://github.com/elain2" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://youtu.be/xtqS5JctUeA" target="_blank" rel="noopener">WWDC 2023</a></li>
+          <li><a href="https://youtu.be/LOmlBy3FSdo" target="_blank" rel="noopener">Developer Vlog</a></li>
+          <li><a href="https://www.instagram.com/free.young.510/" target="_blank" rel="noopener">Photos @free.young.510</a></li>
+        </ul>
+        <button id="ascend" class="ascend" type="button">↑ 수면으로 올라가기</button>
+      </div>
+      <p class="credit">Photographs by Kayoung Lee, except where noted</p>
+    </section>
+  </main>
+
+  <script src="redesign/main.js"></script>
 </body>
 </html>
