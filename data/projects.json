@@ -367,7 +367,7 @@
     "title": "LINE Yuki Camera/Graphics Framework",
     "title_ko": "LINE Yuki 카메라/그래픽스 프레임워크",
     "category": "iOS Development",
-    "thumbnail": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800",
+    "thumbnail": "images/projects/line-yuki-framework/thumbnail.svg",
     "tags": [
       "iOS",
       "Objective-C",

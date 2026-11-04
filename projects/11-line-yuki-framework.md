@@ -2,7 +2,7 @@
 id: line-yuki-framework
 title: LINE Yuki Camera/Graphics Framework
 category: iOS Development
-thumbnail: https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800
+thumbnail: images/projects/line-yuki-framework/thumbnail.svg
 tags:
   - iOS
   - Objective-C

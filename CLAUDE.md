@@ -45,8 +45,11 @@ Agreed with the owner in interviews:
 
 Photo rules:
 - `images/photos/` holds the owner's own photos (Instagram @free.young.510). Their bottom ~8% was cropped to remove the owner's watermark. Anyone pictured gave permission.
+- `rock-shallows.jpg` (the photo before 고양이 사랑방) is `YOUNG-132.jpg` from the owner's Lightroom exports in `~/Documents/라이트룸 보정`. It was cropped the same way and resized to 1800px wide. Original exports there are full size, so resize before adding.
 - `freedive-reef.jpg` was shot by someone else. Keep its "Leeknow" watermark and the "Photo by Leeknow" caption.
 - Freediving appears only as mood and photos, not as written copy.
+
+`images/projects/line-yuki-framework/thumbnail.svg` is an abstract illustration, not a product screenshot: a snowflake-shaped aperture (yuki = snow) between camera frame layers and the Avatar/Voom/Messenger products. Regenerate it with `node scripts/yuki-thumbnail.js images/projects/line-yuki-framework/thumbnail.svg`. It has no LINE logo, so keep it that way.
 
 `images/projects/cat-ddong/` comes from the side project https://github.com/elain2/cat-ddong (live at https://elain2.github.io/cat-ddong/).
 
