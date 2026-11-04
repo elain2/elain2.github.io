@@ -13,7 +13,7 @@ tags:
   - CoreImage
   - MVVM
 description: Face-driven avatar creation with camera capture and Vision framework
-role: iOS Developer
+role: Team Lead
 period: 2019 - 2022
 images:
   - url: images/projects/line-avatar/overview.png

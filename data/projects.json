@@ -170,7 +170,7 @@
     ],
     "description": "Face-driven avatar creation with camera capture and Vision framework",
     "description_ko": "카메라 촬영과 Vision 프레임워크로 얼굴을 읽어 아바타를 만드는 기능",
-    "role": "iOS Developer",
+    "role": "Team Lead",
     "responsibilities": [
       "Launched LINE Avatar (iOS) in 2019 — face recognition SDK integration and camera capture/processing",
       "Implemented avatar customization, catalog, and preview UI",
