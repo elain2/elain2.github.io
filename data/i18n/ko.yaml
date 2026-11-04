@@ -8,7 +8,7 @@ nav.contact: 연락처
 # 히어로 섹션
 hero.greeting: "안녕하세요, 저는"
 hero.title: LINE iOS 개발자
-hero.description: "LINE의 iOS 개발자이자 AI Evangelist입니다. Product Development 4 조직의 AX를 맡고 있고, LINE Voom Camera와 LINE Avatar의 팀 리더였습니다."
+hero.description: "LINE의 iOS 개발자이자 AI Evangelist입니다. LINE Domain Product Development 4 조직의 AX를 맡고 있고, LINE Voom Camera와 LINE Avatar의 팀 리더였습니다."
 
 # 섹션
 skills.title: 기술
@@ -30,9 +30,8 @@ featured.viewAll: 모든 프로젝트 보기
 # 타임라인
 timeline.title: 타임라인
 timeline.subtitle: 개발자로서의 여정
-timeline.now: LINE AI Evangelist로 활동 — Product Development 4 조직의 AX 담당
-timeline.2026.04: LINE AI Dev 팀 리드에서 내려와 팀원으로
-timeline.2026.02: LINE AI Dev (iOS) 팀 리드
+timeline.2026.05: LINE AI Evangelist 활동 시작 — LINE Domain Product Development 4 조직의 AX 담당
+timeline.2026.02: LINE AI Dev 2 리드 (~2026.04)
 timeline.2025.08: LINE AI Task Force 합류 — SSE 스트리밍 AI 채팅 개발, LLM을 이용한 PoC 진행
 timeline.2024.09: LY HACK DAY에서 Vision Pro 'Immersive Memory'로 수상
 timeline.2023.launch: LINE Voom Camera (iOS) 출시

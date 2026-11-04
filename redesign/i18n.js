@@ -101,7 +101,7 @@ const ui = (key, ...args) => {
 const PAGE_EN = {
   'surface.title': 'I carry a camera,<br>so I build them.',
   'surface.sub': 'Everywhere I go, and at work.',
-  'surface.lede': 'iOS engineer at LINE. I built camera and avatar features used by more than 10 million people. Now I\'m an <strong>AI Evangelist</strong>, in charge of AX for the Product Development 4 organization.',
+  'surface.lede': 'iOS engineer at LINE. I built camera and avatar features used by more than 10 million people. Now I\'m an <strong>AI Evangelist</strong>, in charge of AX for the LINE Domain Product Development 4 organization.',
   'surface.dive': 'Dive in <span>↓</span>',
   'surface.alt': 'Self-portrait holding a camera in front of a mirror',
   'surface.caption': '<span>FR 06</span> Okinawa, in front of a mirror',

@@ -1,13 +1,8 @@
 [
   {
-    "year": "Now",
-    "eventKey": "timeline.now",
+    "year": "2026.05",
+    "eventKey": "timeline.2026.05",
     "type": "highlight"
-  },
-  {
-    "year": "2026.04",
-    "eventKey": "timeline.2026.04",
-    "type": "work"
   },
   {
     "year": "2026.02",
