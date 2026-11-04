@@ -36,17 +36,19 @@ async function loadMarkdown(id) {
   }
 }
 
-// Keeps the Korean parts of the markdown body and drops the sections that
-// repeat projects.json (Responsibilities / About). Returns '' when nothing is left.
+// Keeps the parts of the markdown body in the current language and drops the
+// sections that repeat projects.json (Responsibilities / About).
+// Returns '' when nothing is left.
 function technicalMarkdown(text) {
+  const other = lang === 'ko' ? 'en' : 'ko';
   let md = text.replace(/^---\n[\s\S]*?\n---\n/, '');
   md = md
-    .replace(/<!-- lang:en -->[\s\S]*?<!-- \/lang:en -->/g, '')
-    .replace(/<!-- \/?lang:ko -->/g, '');
+    .replace(new RegExp(`<!-- lang:${other} -->[\\s\\S]*?<!-- \\/lang:${other} -->`, 'g'), '')
+    .replace(new RegExp(`<!-- \\/?lang:${lang} -->`, 'g'), '');
 
   const diagrams = [];
-  md = md.replace(/```mermaid(-en|-ko)?\n([\s\S]*?)```/g, (_, lang, code) => {
-    if (lang === '-en') return '';
+  md = md.replace(/```mermaid(-en|-ko)?\n([\s\S]*?)```/g, (_, suffix, code) => {
+    if (suffix === `-${other}`) return '';
     diagrams.push(code.trim());
     return `\n<div class="diagram" data-i="${diagrams.length - 1}"></div>\n`;
   });
@@ -107,14 +109,16 @@ function heroSection(p, index, total) {
   const media = img
     ? `<img src="${esc(img)}" alt="">`
     : `<div class="placeholder">${esc(p.category)}</div>`;
-  const english = p.title_ko && p.title_ko !== p.title ? `<p class="serif-sub">${esc(p.title)}</p>` : '';
+  // Korean pages also show the English title, in the serif accent.
+  const english = lang === 'ko' && p.title_ko && p.title_ko !== p.title
+    ? `<p class="serif-sub">${esc(p.title)}</p>` : '';
 
   const facts = [
-    ['기간', esc(p.period)],
-    ['역할', esc(p.role)],
-    p.contribution ? ['기여도', `${esc(p.contribution)}%`] : null,
+    [ui('period'), esc(p.period)],
+    [ui('role'), esc(p.role)],
+    p.contribution ? [ui('contribution'), `${esc(p.contribution)}%`] : null,
     p.publication || p.event
-      ? ['발표', p.publicationUrl
+      ? [ui('published'), p.publicationUrl
         ? `<a href="${esc(p.publicationUrl)}" target="_blank" rel="noopener">${esc(p.publication || p.event)} ↗</a>`
         : esc(p.publication || p.event)]
       : null,
@@ -125,9 +129,9 @@ function heroSection(p, index, total) {
   return section('p-hero', 0, `
     <div class="p-hero-text">
       <p class="eyebrow">Project ${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')} · ${esc(p.category)}</p>
-      <h1>${esc(ko(p, 'title'))}</h1>
+      <h1>${esc(field(p, 'title'))}</h1>
       ${english}
-      <p class="lede">${esc(ko(p, 'description'))}</p>
+      <p class="lede">${esc(field(p, 'description'))}</p>
       <dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
       <ul class="tags">${tags}</ul>
     </div>
@@ -136,20 +140,20 @@ function heroSection(p, index, total) {
 
 // Keeps the hero at surface colour; the water starts below this line.
 const waterlineSection = () =>
-  section('p-waterline', 0, '<a href="#p-role" class="dive-hint">아래로 잠수하기 <span>↓</span></a>');
+  section('p-waterline', 0, `<a href="#p-role" class="dive-hint">${esc(ui('diveHint'))} <span>↓</span></a>`);
 
 function roleSection(p) {
-  const about = ko(p, 'detailedDescription');
-  const resp = ko(p, 'responsibilities') || [];
+  const about = field(p, 'detailedDescription');
+  const resp = field(p, 'responsibilities') || [];
   if (!about && !resp.length) return '';
   return section('p-role', 5, `
     <div class="p-about">
-      <p class="eyebrow">-5m · 프로젝트 소개</p>
+      <p class="eyebrow">${esc(ui('aboutProject'))}</p>
       ${about ? `<p>${esc(about)}</p>` : ''}
     </div>
     ${resp.length ? `
     <div class="p-resp">
-      <p class="eyebrow">맡은 일</p>
+      <p class="eyebrow">${esc(ui('whatIDid'))}</p>
       <ol class="resp">${resp.map((r) => `<li>${esc(r)}</li>`).join('')}</ol>
     </div>` : ''}`);
 }
@@ -163,7 +167,7 @@ function mediaSection(p, heroImage) {
   const items = [];
   (p.demoVideos || []).forEach((v) => items.push(`
     <figure class="clip"><video src="${esc(v.url)}" controls playsinline preload="metadata"></video>
-      ${v.caption ? `<figcaption>${esc(ko(v, 'caption'))}</figcaption>` : ''}</figure>`));
+      ${v.caption ? `<figcaption>${esc(field(v, 'caption'))}</figcaption>` : ''}</figure>`));
   if (p.localVideo) {
     const poster = p.localVideoPoster ? ` poster="${esc(p.localVideoPoster)}"` : '';
     items.push(`<figure class="clip"><video src="${esc(p.localVideo)}"${poster} controls playsinline preload="metadata"></video></figure>`);
@@ -172,20 +176,20 @@ function mediaSection(p, heroImage) {
   if (yt) {
     items.push(`
       <figure class="wide"><iframe class="yt" src="https://www.youtube-nocookie.com/embed/${yt}"
-        title="${esc(p.title)} 데모 영상" loading="lazy" allowfullscreen
+        title="${esc(field(p, 'title'))} ${esc(ui('demoVideo'))}" loading="lazy" allowfullscreen
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      <figcaption>YouTube 데모 영상</figcaption></figure>`);
+      <figcaption>${esc(ui('youTubeDemo'))}</figcaption></figure>`);
   }
   (p.images || [])
     .filter((img) => isLocal(img.url) && img.url !== heroImage)
     .forEach((img) => items.push(`
-      <figure><img loading="lazy" src="${esc(img.url)}" alt="${esc(ko(img, 'caption') || '')}">
-        ${img.caption ? `<figcaption>${esc(ko(img, 'caption'))}</figcaption>` : ''}</figure>`));
+      <figure><img loading="lazy" src="${esc(img.url)}" alt="${esc(field(img, 'caption') || '')}">
+        ${img.caption ? `<figcaption>${esc(field(img, 'caption'))}</figcaption>` : ''}</figure>`));
 
   if (!items.length) return '';
   const single = items.length === 1 ? ' is-single' : '';
   return section('p-media', 12, `
-    <div class="section-head"><p class="eyebrow">-12m · 영상과 이미지</p></div>
+    <div class="section-head"><p class="eyebrow">${esc(ui('media'))}</p></div>
     <div class="gallery${single}">${items.join('')}</div>`);
 }
 
@@ -193,8 +197,8 @@ function detailsSection(html) {
   if (!html) return '';
   return section('p-details', 24, `
     <div class="section-head">
-      <p class="eyebrow">-24m · 기술 상세</p>
-      <h2>조금 더 깊이</h2>
+      <p class="eyebrow">${esc(ui('details'))}</p>
+      <h2>${esc(ui('deeper'))}</h2>
     </div>
     <article class="md">${html}</article>`);
 }
@@ -205,18 +209,18 @@ function endSection(ordered, index) {
   const link = (p, dir, cls) => `
     <a class="${cls}" href="${detailLink(p)}">
       <span class="dir">${dir}</span>
-      <span class="ttl">${esc(ko(p, 'title'))}</span>
-      <span class="dsc">${esc(ko(p, 'description'))}</span>
+      <span class="ttl">${esc(field(p, 'title'))}</span>
+      <span class="dsc">${esc(field(p, 'description'))}</span>
     </a>`;
   return section('p-end', 40, `
-    <p class="eyebrow">-40m · 바닥에 닿았습니다</p>
-    <nav class="pager" aria-label="다른 프로젝트">
-      ${link(prev, '← 이전 프로젝트', 'prev')}
-      ${link(next, '다음 프로젝트 →', 'next')}
+    <p class="eyebrow">${esc(ui('bottom'))}</p>
+    <nav class="pager" aria-label="${esc(ui('otherProjects'))}">
+      ${link(prev, esc(ui('prev')), 'prev')}
+      ${link(next, esc(ui('next')), 'next')}
     </nav>
     <div class="end-links">
-      <a href="${esc(document.getElementById('back-link').getAttribute('href'))}">전체 프로젝트 보기</a>
-      <button class="ascend" type="button">↑ 수면으로 올라가기</button>
+      <a href="${esc(document.getElementById('back-link').getAttribute('href'))}">${esc(ui('viewAll'))}</a>
+      <button class="ascend" type="button">${esc(ui('ascend'))}</button>
     </div>`);
 }
 
@@ -240,13 +244,16 @@ function dropMissingVideos(root) {
 function renderNotFound(id) {
   document.getElementById('project').innerHTML = section('p-hero p-missing', 0, `
     <div class="p-hero-text">
-      <p class="eyebrow">404 · 물 밖</p>
-      <h1>이 프로젝트를 찾지 못했습니다.</h1>
-      <p class="lede">${id ? `“${esc(id)}”라는 프로젝트는 없습니다.` : '프로젝트가 지정되지 않았습니다.'}</p>
-      <p class="links"><a href="index.html#work">전체 프로젝트 보기</a></p>
+      <p class="eyebrow">${esc(ui('notFoundEyebrow'))}</p>
+      <h1>${esc(ui('notFoundTitle'))}</h1>
+      <p class="lede">${esc(id ? ui('notFoundId', id) : ui('noId'))}</p>
+      <p class="links"><a href="index.html#work">${esc(ui('viewAll'))}</a></p>
     </div>`);
   measure();
 }
+
+// Loaded once; the language toggle re-renders from this without fetching again.
+let page = null;
 
 async function render() {
   const id = new URLSearchParams(location.search).get('id');
@@ -254,19 +261,31 @@ async function render() {
   try {
     projects = await loadJSON('projects');
   } catch (err) {
-    document.querySelector('#project .eyebrow').textContent = `프로젝트를 불러오지 못했습니다 (${err.message})`;
+    document.querySelector('#project .eyebrow').textContent = `${ui('loadFailed')} (${err.message})`;
     return;
   }
 
   const ordered = orderProjects(projects);
   const index = ordered.findIndex((p) => p.id === id);
-  if (index < 0) return renderNotFound(id);
+  if (index < 0) {
+    page = { id };
+    return renderNotFound(id);
+  }
+
+  page = { id, ordered, index, markdown: await loadMarkdown(ordered[index].id) };
+  draw();
+}
+
+function draw() {
+  if (!page) return;
+  if (!page.ordered) return renderNotFound(page.id);
+  const { ordered, index, markdown } = page;
   const p = ordered[index];
 
-  document.title = `${ko(p, 'title')} — Kayoung Lee`;
+  document.title = `${field(p, 'title')} — Kayoung Lee`;
   document.getElementById('back-link').href = FEATURED.includes(p.id) ? 'index.html#work' : 'index.html#archive';
 
-  const { md, diagrams } = technicalMarkdown(await loadMarkdown(p.id));
+  const { md, diagrams } = technicalMarkdown(markdown);
   const mdHtml = md && typeof marked !== 'undefined' ? marked.parse(md) : '';
 
   const main = document.getElementById('project');
@@ -284,5 +303,6 @@ async function render() {
   drawDiagrams(main, diagrams);
 }
 
+startLang(draw);
 startWater({ hold: 0.6 });
 render();

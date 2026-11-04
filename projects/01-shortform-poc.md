@@ -256,7 +256,7 @@ AppDelegate (부트스트랩)
 <!-- /lang:ko -->
 
 ```swift
-// LLMServiceInterface - 프로토콜 정의
+// LLMServiceInterface - protocol definition
 public protocol ShortformVideoGeneratorProtocol: Sendable {
     func generateVideo(
         assets: [LLMMediaAsset],

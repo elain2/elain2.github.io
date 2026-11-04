@@ -94,10 +94,26 @@ figcaption span { margin-right: 10px; color: var(--fg); opacity: 0.8; }
   letter-spacing: 0.12em;
   mix-blend-mode: normal;
 }
-.topbar a { text-decoration: none; }
+.topbar a { text-decoration: none; white-space: nowrap; }
 .topbar nav { display: flex; gap: 28px; }
 .topbar nav a { color: var(--muted); transition: color 0.2s; }
 .topbar nav a:hover { color: var(--fg); }
+.lang-toggle {
+  display: inline-flex;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--muted);
+  cursor: pointer;
+}
+.lang-toggle span { transition: color 0.2s; }
+.lang-toggle span + span::before { content: "/"; margin-right: 6px; color: var(--line); }
+.lang-toggle .is-on { color: var(--fg); }
+.lang-toggle:hover span { color: var(--fg); }
+.lang-toggle:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
 
 .gauge {
   position: fixed;
@@ -384,11 +400,17 @@ main { position: relative; z-index: 2; }
 
 /* ---------- Mobile ---------- */
 
+/* Small phones: the contact section is at the bottom of every page anyway. */
+@media (max-width: 400px) {
+  .topbar nav a[href$="#deep"] { display: none; }
+}
+
 @media (max-width: 820px) {
   body { font-size: 16px; }
   section { padding-right: calc(var(--gutter) + 10px); }
   body.is-under .bubbles { opacity: 0.45; }
-  .topbar nav { gap: 18px; }
+  .topbar { letter-spacing: 0.06em; }
+  .topbar nav { gap: 14px; }
   .gauge { right: 6px; }
   .gauge-track { height: 18vh; }
 

@@ -17,11 +17,11 @@ function renderFeatured(projects) {
         <div class="project-media">${media}</div>
         <div class="project-body">
           <p class="project-index">${String(i + 1).padStart(2, '0')} · ${esc(p.category)}</p>
-          <h3>${esc(ko(p, 'title'))}</h3>
+          <h3>${esc(field(p, 'title'))}</h3>
           <p class="project-meta">${esc(p.period)} · ${esc(p.role || '')}</p>
-          <p class="project-desc">${esc(ko(p, 'description'))}</p>
+          <p class="project-desc">${esc(field(p, 'description'))}</p>
           <ul class="tags">${tags}</ul>
-          <span class="more">자세히 보기 →</span>
+          <span class="more">${esc(ui('readMore'))}</span>
         </div>
       </a>`;
   }).join('');
@@ -33,8 +33,8 @@ function renderArchive(projects) {
   document.getElementById('archive-list').innerHTML = rest.map((p) => `
     <li><a href="${detailLink(p)}">
       <span class="yr">${esc(p.period)}</span>
-      <span class="ttl">${esc(ko(p, 'title'))}</span>
-      <span class="dsc">${esc(ko(p, 'description'))}</span>
+      <span class="ttl">${esc(field(p, 'title'))}</span>
+      <span class="dsc">${esc(field(p, 'description'))}</span>
       <span class="cat">${esc(p.category)}</span>
     </a></li>`).join('');
 }
@@ -60,21 +60,33 @@ function renderLog(timeline, achievements, t) {
   }).join('');
 }
 
+// Loaded once; the language toggle re-renders from this without fetching again.
+let content = null;
+
+function renderContent() {
+  if (!content) return;
+  const { projects, timeline, achievements, strings } = content;
+  renderFeatured(projects);
+  renderArchive(projects);
+  renderLog(timeline, achievements, strings[lang]);
+  measure();
+}
+
 async function loadContent() {
   try {
-    const [projects, timeline, achievements, t] = await Promise.all(
-      ['projects', 'timeline', 'achievements', 'i18n/ko'].map(loadJSON)
+    const [projects, timeline, achievements, ko, en] = await Promise.all(
+      ['projects', 'timeline', 'achievements', 'i18n/ko', 'i18n/en'].map(loadJSON)
     );
-    renderFeatured(projects);
-    renderArchive(projects);
-    renderLog(timeline, achievements, t);
+    content = { projects, timeline, achievements, strings: { ko, en } };
+    renderContent();
   } catch (err) {
     document.getElementById('featured').innerHTML =
-      `<p class="eyebrow">프로젝트를 불러오지 못했습니다 (${esc(err.message)})</p>`;
+      `<p class="eyebrow">${esc(ui('loadFailed'))} (${esc(err.message)})</p>`;
   }
   scrollToHash();
   measure();
 }
 
+startLang(renderContent);
 startWater();
 loadContent();

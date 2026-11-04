@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kayoung Lee — 프로젝트 상세">
   <title>Project — Kayoung Lee</title>
+  <script src="redesign/i18n.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +17,9 @@
   <header class="topbar">
     <a href="index.html" class="mark">KAYOUNG LEE</a>
     <nav>
-      <a href="index.html#work" id="back-link">← 전체 프로젝트</a>
+      <a href="index.html#work" id="back-link" data-i18n="project.back">← 전체 프로젝트</a>
       <a href="index.html#deep">Contact</a>
+      <button class="lang-toggle" type="button"><span data-l="ko">KO</span><span data-l="en">EN</span></button>
     </nav>
   </header>
 
@@ -30,7 +32,7 @@
 
   <main id="project">
     <section class="p-hero" data-bg="#f4f6f7" data-depth="0">
-      <p class="eyebrow">불러오는 중…</p>
+      <p class="eyebrow" data-i18n="project.loading">불러오는 중…</p>
     </section>
   </main>
 

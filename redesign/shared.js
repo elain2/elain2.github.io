@@ -17,7 +17,6 @@ const FEATURED = [
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-const ko = (p, key) => p[`${key}_ko`] || p[key];
 
 const isLocal = (url) => typeof url === 'string' && url.startsWith('images/');
 
