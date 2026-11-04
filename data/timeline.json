@@ -25,6 +25,11 @@
     "type": "highlight"
   },
   {
+    "year": "2023",
+    "eventKey": "timeline.2023.lead",
+    "type": "work"
+  },
+  {
     "year": "2021",
     "eventKey": "timeline.2021",
     "type": "tech"
