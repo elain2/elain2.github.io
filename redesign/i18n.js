@@ -99,8 +99,8 @@ const ui = (key, ...args) => {
 
 // English for the static markup in index.html and project.html.
 const PAGE_EN = {
-  'surface.title': 'I build cameras,<br>and I carry one.',
-  'surface.sub': 'At work, and everywhere else.',
+  'surface.title': 'I carry a camera,<br>so I build them.',
+  'surface.sub': 'Everywhere I go, and at work.',
   'surface.lede': 'iOS engineer at LINE. I built camera and avatar features used by more than 10 million people. Now I build AI.',
   'surface.dive': 'Dive in <span>↓</span>',
   'surface.alt': 'Self-portrait holding a camera in front of a mirror',
