@@ -95,6 +95,8 @@ Company overrides live in `data/companies.json`. They set the greeting, featured
 
 Markdown below the Responsibilities/About sections becomes the "기술 상세" part of the detail page. Wrap language-specific text in `<!-- lang:ko -->…<!-- /lang:ko -->`, and use ` ```mermaid ` or ` ```mermaid-ko ` for diagrams.
 
+Demo videos must be H.264 MP4. Convert `.mov` or HEVC recordings with `python3 scripts/convert-videos.py <files or folders>` (needs `ffmpeg`). Each MP4 is written next to its source.
+
 The main page only shows images stored under `images/`. Projects without one show a text placeholder.
 
 > **Note:** `scripts/build-projects.js` currently drops the Korean fields (`*_ko`), `demoVideos`, and local thumbnails. Don't run it, or `scripts/build-data.js` (which calls it), without checking the diff of `data/projects.json` afterwards.

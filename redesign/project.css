@@ -81,6 +81,9 @@
   background: rgba(0, 0, 0, 0.25);
 }
 .gallery video { max-height: 80vh; }
+/* Clips keep their own aspect ratio (most demos are vertical phone recordings). */
+.gallery .clip video { width: auto; max-width: 100%; height: auto; max-height: min(78vh, 720px); margin: 0 auto; }
+.gallery .clip figcaption { text-align: center; }
 .gallery .yt { aspect-ratio: 16 / 9; height: auto; border: 0; }
 
 /* ---------- -24m Technical notes ---------- */
