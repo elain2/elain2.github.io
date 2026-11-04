@@ -12,7 +12,7 @@ tags:
   - Async/Await
   - UIKit
 description: Building real-time AI chat UI with streaming responses and robust networking
-role: iOS Project Lead
+role: "iOS Developer · former Project Lead"
 period: 2025.08 - Present
 images:
   - url: images/projects/line-ai-dev2/overview.png

@@ -67,7 +67,7 @@
     ],
     "description": "Building real-time AI chat UI with streaming responses and robust networking",
     "description_ko": "스트리밍 응답과 안정적인 네트워킹을 갖춘 실시간 AI 채팅 UI 개발",
-    "role": "iOS Project Lead",
+    "role": "iOS Developer · former Project Lead",
     "responsibilities": [
       "Architected iOS client module handling response streaming, conversation state, and network/cache optimization for a service with over 10 million users",
       "Implemented URLSession-based Server-Sent Events (SSE) streaming for real-time AI responses",
