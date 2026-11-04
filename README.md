@@ -1,79 +1,76 @@
 # Kayoung Lee - Portfolio
 
-Personal portfolio website showcasing iOS development projects, research work, and professional experience.
+Personal portfolio of Kayoung Lee, an iOS engineer at LINE who builds cameras and carries one.
 
 **Live:** [elain2.github.io](https://elain2.github.io)
 
-## Features
+## Overview
 
-- **Responsive Design** - Mobile-first, works on all devices
-- **Bilingual Support** - English / Korean (i18n)
-- **Company Customization** - Tailored content via URL parameters (`?company=apple`)
-- **Markdown Projects** - Project details written in Markdown with Mermaid diagram support
-- **Video Demos** - Embedded demo videos for select projects
-- **Static Site** - No build step required, pure HTML/CSS/JS
+The main page uses the **"Surface → Deep"** design. As you scroll, the page dives from a white surface down to black at -40m. A depth gauge, rising bubbles, and the owner's own photos set the mood.
 
-## Tech Stack
+The previous Apple-style site still runs at [`classic.html`](https://elain2.github.io/classic.html). For now it serves the project detail pages and the company-specific links.
 
-- Vanilla JavaScript (ES6+)
-- CSS3 with CSS Variables
-- [marked.js](https://marked.js.org/) - Markdown parsing
-- [mermaid.js](https://mermaid.js.org/) - Diagram rendering
+- **Static site:** vanilla HTML/CSS/JS with no bundler and no build step to deploy
+- **One data source:** both pages read the same `data/*.json`
+- **Markdown project pages:** rendered with [marked.js](https://marked.js.org/) and [mermaid.js](https://mermaid.js.org/)
+- **Company customization:** `?company=<key>` tailors the content (classic site)
 
 ## Project Structure
 
 ```
-├── index.html          # Entry point
-├── css/
-│   └── style.css       # All styles
-├── js/
-│   └── app.js          # Application logic
+├── index.html            # Main page (Surface → Deep)
+├── redesign/
+│   ├── style.css         # Main page styles
+│   ├── main.js           # Depth/background scroll effects, data rendering
+│   └── index.html        # Redirects the old /redesign/ URL to /
+├── classic.html          # Previous Apple-style SPA (#/, #/projects, #/projects/<id>)
+├── css/style.css         # Classic site styles
+├── js/app.js             # Classic site logic (routing, i18n, company overrides)
 ├── data/
-│   ├── profile.json    # Personal info & skills
-│   ├── projects.json   # Project metadata
-│   ├── timeline.json   # Career timeline
-│   ├── achievements.json
-│   ├── companies.json  # Company-specific customizations
-│   └── i18n/
-│       ├── en.json     # English translations
-│       └── ko.json     # Korean translations
-├── projects/           # Markdown files for each project
-│   ├── 01-shortform-poc.md
-│   ├── 02-line-ai-dev2.md
-│   └── ...
-└── images/
-    └── projects/       # Project images & videos
+│   ├── *.yaml            # Editable sources (profile, timeline, achievements, companies, i18n)
+│   ├── *.json            # What the browser loads
+│   └── i18n/{en,ko}.json
+├── projects/*.md         # Project detail pages (frontmatter + Markdown)
+├── images/
+│   ├── photos/           # The owner's photos used on the main page
+│   └── projects/         # Project images & videos
+└── scripts/              # YAML/Markdown -> JSON build scripts
 ```
 
 ## Local Development
 
-```bash
-# Start local server
-python3 -m http.server 8000
+The pages fetch JSON, so open them through a local server instead of `file://`.
 
-# Open in browser
+```bash
+python3 -m http.server 8000
+```
+
+```bash
 open http://localhost:8000
 ```
 
-## Company Customization
+## Deployment
 
-Add URL parameter to show tailored content:
+GitHub Pages serves the site from the root of the `master` branch. Commit to `master` and push. The site updates a minute or two later.
+
+```bash
+git push origin master
+```
+
+## Links for the Classic Site
+
+Links made for the old site still work. The main page forwards them to `classic.html`.
 
 ```
-https://elain2.github.io/?company=apple
-https://elain2.github.io/?c=google
+https://elain2.github.io/?company=apple     -> classic.html?company=apple
+https://elain2.github.io/#/projects/<id>    -> classic.html#/projects/<id>
 ```
 
-Configure in `data/companies.json`:
-- Featured project ordering
-- Highlighted skills
-- Custom greetings and descriptions
-- Role mapping
+Company overrides live in `data/companies.json`. They set the greeting, featured project order, highlighted skills, and a custom message.
 
 ## Adding a New Project
 
-1. Create markdown file in `projects/` (e.g., `12-new-project.md`)
-2. Add frontmatter with metadata:
+1. Create a Markdown file in `projects/`, for example `12-new-project.md`, with frontmatter:
    ```yaml
    ---
    id: new-project
@@ -86,8 +83,13 @@ Configure in `data/companies.json`:
      - iOS
    ---
    ```
-3. Add project entry to `data/projects.json`
-4. Update `getProjectFiles()` in `js/app.js`
+2. Add the project entry to `data/projects.json` by hand. See the note below.
+3. Add the file to `getProjectFiles()` in `js/app.js` so the detail page can load it.
+4. To show it as a large row on the main page, add its `id` to `FEATURED` in `redesign/main.js`. Otherwise it appears in the archive list.
+
+The main page only shows images stored under `images/`. Projects without one show a text placeholder.
+
+> **Note:** `scripts/build-projects.js` currently drops the Korean fields (`*_ko`), `demoVideos`, and local thumbnails. Don't run it, or `scripts/build-data.js` (which calls it), without checking the diff of `data/projects.json` afterwards.
 
 ## License
 
