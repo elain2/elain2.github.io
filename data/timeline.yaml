@@ -1,6 +1,10 @@
 # 타임라인 / 경력 연혁
 # Timeline / Career History
 
+- year: "Now"
+  eventKey: timeline.now
+  type: highlight
+
 - year: "2026.04"
   eventKey: timeline.2026.04
   type: work

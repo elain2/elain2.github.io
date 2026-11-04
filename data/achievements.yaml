@@ -1,6 +1,15 @@
 # 성과 및 수상
 # Achievements & Awards
 
+- titleKey: achievements.evangelist.title
+  descKey: achievements.evangelist.desc
+  year: "2026"
+  icon: award
+  color: "#06C755"
+  links:
+    - url: https://www.linecorp.com/en/pr/news/global/20261023/
+      labelKey: achievements.readArticle
+
 - titleKey: achievements.hackday.title
   descKey: achievements.hackday.desc
   year: "2024"
