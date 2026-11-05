@@ -30,7 +30,7 @@ There are two front ends that share one data folder:
    - A script in the `<head>` of `index.html` forwards old links: `#/projects/<id>` goes to `project.html?id=<id>`, and `?company=`, `?c=` and other `#/...` links go to `classic.html`. `redesign/index.html` only redirects to the root, so the old `/redesign/` URL keeps working.
    - KO/EN: `redesign/i18n.js` is loaded in the `<head>` of both pages. Language comes from `?lang=ko|en`, then the saved choice (`localStorage` key `lang`, shared with `classic.html`), then the browser language (Korean browsers get Korean, everyone else English). The toggle in the top bar switches without a reload.
    - Korean copy stays in the HTML. English for the static markup is `PAGE_EN` in `i18n.js`, matched by `data-i18n` (innerHTML), `data-i18n-alt` and `data-i18n-label`. Strings built in JS use `ui(key)`. Project fields go through `field(p, key)`: `*_ko` in Korean, the base field in English. Timeline and achievements come from `data/i18n/{ko,en}.json`. Markdown keeps `<!-- lang:xx -->` blocks and `mermaid-xx` diagrams for the current language.
-   - Korean copy is in 합니다체. Korean detail pages fall back to English where a project has no `*_ko` field (most `responsibilities` and `detailedDescription`).
+   - Korean copy is in 합니다체. Korean detail pages fall back to English where a project has no `*_ko` field. Every project now has `responsibilities_ko`, `detailedDescription_ko` and `caption_ko`; `role` is still shown in English.
 2. **Old site (`classic.html` + `js/app.js` + `css/style.css`).** Apple-styled single-page app with hash routing: `#/`, `#/projects`, `#/projects/<id>`. Still used for `?company=` links.
    - `DataStore` fetches `data/*.json`. Project detail bodies are fetched at runtime from `projects/*.md` (frontmatter stripped, rendered with marked.js + mermaid).
    - The project file list is hardcoded in `getProjectFiles()` in `js/app.js` (and `PROJECT_FILES` in `redesign/project.js`), so a new project needs an entry in both.
@@ -68,7 +68,7 @@ Photo rules:
 The redesign is live as the main page. The old site lives on as `classic.html`.
 
 1. **Polish the English copy.** The English version is live (`?lang=en`). Its main-page copy in `redesign/i18n.js` is a first translation and hasn't been reviewed by the owner yet.
-2. **Korean copy for detail pages.** Only `shortform-poc` has `responsibilities_ko` / `detailedDescription_ko`. The other 10 projects show English in those two blocks. Image captions are English only (`caption_ko` is supported).
+2. **Review the Korean detail-page copy.** `responsibilities_ko`, `detailedDescription_ko` and `caption_ko` were added for all projects on 2026-11-06 as translations of the English. The owner hasn't reviewed them yet.
 3. **Retire the old site.** Once i18n is covered, remove `classic.html`, `css/style.css` and `js/app.js`. Decide whether to keep `?company=` customization (it currently forwards to `classic.html`) and port it.
 4. **Fix `scripts/build-projects.js`** so it keeps `*_ko` fields, `demoVideos`, and local thumbnails. Then move the Korean copy back into `projects/*.md` so the markdown becomes the source of truth again.
 5. **Replace remote Unsplash thumbnails** with real project images. Projects without local images show a text placeholder in the redesign.

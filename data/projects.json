@@ -36,7 +36,7 @@
     ],
     "period": "2025.04 - 2026.05",
     "detailedDescription": "A PoC project that automatically analyzes photos/videos shared in messenger chat rooms using AI, matches them to optimal shortform video templates, and generates completed shortform videos. The core focus is leveraging LLM's contextual understanding to comprehend media composition, mood, and narrative flow, then optimally place them into template slots.",
-    "detailedDescription_ko": "메신저 채팅방에서 공유된 사진/동영상을 AI가 자동으로 분석하여, 최적의 숏폼 영상 템플릿에 매칭하고 완성된 숏폼을 생성하는 PoC 프로젝트. LLM의 \"맥락을 읽는 능력\"을 적극 활용하여 미디어의 구도, 분위기, 서사적 흐름을 이해하고 템플릿 슬롯에 최적 배치하는 것이 핵심.",
+    "detailedDescription_ko": "메신저 채팅방에서 공유된 사진과 동영상을 AI가 자동으로 분석해 가장 잘 맞는 숏폼 영상 템플릿에 매칭하고, 완성된 숏폼을 만들어 주는 PoC 프로젝트입니다. LLM의 \"맥락을 읽는 능력\"을 적극 활용해 미디어의 구도, 분위기, 서사적 흐름을 이해하고 템플릿 슬롯에 가장 알맞게 배치하는 것이 핵심입니다.",
     "demoVideos": [
       {
         "url": "images/projects/shortform-poc/demo-hamburg.mp4",
@@ -75,12 +75,21 @@
       "Defined robust error, retry, and cancellation policies for unreliable network conditions",
       "Coordinated API contract alignment with backend engineers and product managers"
     ],
+    "responsibilities_ko": [
+      "1,000만 명 이상이 쓰는 서비스의 iOS 클라이언트 모듈 설계 (응답 스트리밍, 대화 상태, 네트워크/캐시 최적화)",
+      "URLSession 기반 SSE(Server-Sent Events) 스트리밍으로 실시간 AI 응답 구현",
+      "리치 텍스트 표시를 위한 Markdown 파서와 NSAttributedString 기반 렌더러 개발",
+      "불안정한 네트워크 환경에 대비한 에러, 재시도, 취소 정책 정의",
+      "백엔드 엔지니어, 기획자와 API 명세 조율"
+    ],
     "period": "2025.08 - Present",
     "detailedDescription": "Leading iOS development for LINE's in-app AI assistant. Deep expertise in networking protocols (URLSession, SSE), asynchronous programming (Combine, async/await), and building responsive UIs that handle streaming data at scale.",
+    "detailedDescription_ko": "LINE 앱 안의 AI 어시스턴트 iOS 개발을 맡고 있습니다. URLSession과 SSE 같은 네트워킹 프로토콜, Combine과 async/await 비동기 프로그래밍, 대규모 스트리밍 데이터를 끊김 없이 보여주는 UI를 깊이 다루고 있습니다.",
     "images": [
       {
         "url": "images/projects/line-ai-dev2/overview.png",
-        "caption": "LINE AI Dev Overview"
+        "caption": "LINE AI Dev Overview",
+        "caption_ko": "LINE AI Dev 개요"
       }
     ]
   },
@@ -107,14 +116,22 @@
       "Integrated PhotoKit and AVFoundation for media asset handling",
       "Won Communication Award at LY Corporation's internal Hack Day in Japan"
     ],
+    "responsibilities_ko": [
+      "SwiftUI로 함께 나눈 추억을 3D 갤러리에서 다시 경험하는 visionOS 앱 개발",
+      "RealityKit 3D 공간에 사진을 배치하고 시선·제스처 인터랙션 구현",
+      "PhotoKit, AVFoundation을 연동한 미디어 에셋 처리",
+      "LY Corporation 일본 사내 Hack Day에서 Communication Award 수상"
+    ],
     "period": "2024.09",
     "detailedDescription": "Designed and built a visionOS experience that lets LINE users relive shared memories in a 3D gallery using Apple Vision Pro. Demonstrated expertise in SwiftUI, RealityKit, and Apple's latest spatial UI frameworks. Recognized for immediate integration viability into LINE service.",
+    "detailedDescription_ko": "Apple Vision Pro에서 LINE 사용자가 함께 나눈 추억을 3D 갤러리로 다시 경험할 수 있는 visionOS 앱을 설계하고 만들었습니다. SwiftUI, RealityKit 등 Apple의 최신 공간 UI 프레임워크를 다뤘고, LINE 서비스에 바로 붙일 수 있는 완성도로 인정받았습니다.",
     "localVideo": "images/projects/line-vision-pro/demo.mp4",
     "localVideoPoster": "images/projects/line-vision-pro/demo-poster.jpg",
     "images": [
       {
         "url": "images/projects/line-vision-pro/overview.png",
-        "caption": "Immersive Memory Overview"
+        "caption": "Immersive Memory Overview",
+        "caption_ko": "Immersive Memory 개요"
       }
     ]
   },
@@ -143,12 +160,21 @@
       "Built VOOMVideoComposer for multi-track video/audio composition using AVMutableComposition",
       "Ensured thread safety using GCD and OperationQueue; optimized memory for large multi-track edits"
     ],
+    "responsibilities_ko": [
+      "VoomCameraViewController 담당: AVFoundation 캡처 세션, 실시간 프리뷰 렌더링, 기기별 포맷 선택",
+      "Metal과 Core Image 기반 실시간 프리뷰 이펙트 파이프라인 설계",
+      "편집 상태 전체를 담는 Storyboard 데이터 모델 설계 (NSCoding, 스키마 버전 관리)",
+      "AVMutableComposition 기반 멀티트랙 영상/오디오 합성기 VOOMVideoComposer 개발",
+      "GCD, OperationQueue로 스레드 안전성 확보, 대용량 멀티트랙 편집의 메모리 최적화"
+    ],
     "period": "2023 - 2026.04",
     "detailedDescription": "Led the iOS team for LINE's short-form video product shipped to global users (JP/TW/TH). Deep expertise in UIKit, AVFoundation, Metal, and asynchronous programming with GCD/OperationQueue. Delivered polished camera UI with real-time effects and robust video editing capabilities.",
+    "detailedDescription_ko": "일본, 대만, 태국 등 글로벌 사용자에게 출시된 LINE 숏폼 영상 서비스의 iOS 팀을 이끌었습니다. UIKit, AVFoundation, Metal, GCD/OperationQueue 비동기 프로그래밍을 깊이 다루며 실시간 이펙트가 들어간 카메라 UI와 안정적인 영상 편집 기능을 만들었습니다.",
     "images": [
       {
         "url": "images/projects/line-voom-camera/overview.png",
-        "caption": "LINE Voom Camera Overview"
+        "caption": "LINE Voom Camera Overview",
+        "caption_ko": "LINE Voom Camera 개요"
       }
     ]
   },
@@ -177,12 +203,20 @@
       "Integrated with messenger chat and profile interfaces",
       "Introduced MVVM architecture pattern (2020-2022) improving testability and reducing UI coupling"
     ],
+    "responsibilities_ko": [
+      "2019년 LINE Avatar iOS 출시: 얼굴 인식 SDK 연동, 카메라 촬영 및 이미지 처리",
+      "아바타 꾸미기, 카탈로그, 미리보기 UI 구현",
+      "메신저 채팅, 프로필 화면과 연동",
+      "MVVM 아키텍처 도입(2020-2022)으로 테스트하기 쉬운 구조를 만들고 UI 결합도 감소"
+    ],
     "period": "2019 - 2022",
     "detailedDescription": "Developed LINE Avatar feature for iOS — face recognition-based character creation, customization, and sharing. Built camera capture screens with Vision/CoreImage-based face detection. First production project at LINE Plus, demonstrating strong OOP and architecture design skills.",
+    "detailedDescription_ko": "얼굴 인식으로 캐릭터를 만들고, 꾸미고, 공유하는 LINE Avatar iOS 기능을 개발했습니다. Vision과 Core Image 기반 얼굴 검출로 카메라 촬영 화면을 만들었습니다. LINE Plus에서 처음 맡은 프로덕션 프로젝트로, 객체지향 설계와 아키텍처 역량을 보여준 프로젝트입니다.",
     "images": [
       {
         "url": "images/projects/line-avatar/overview.png",
-        "caption": "LINE Avatar Overview"
+        "caption": "LINE Avatar Overview",
+        "caption_ko": "LINE Avatar 개요"
       }
     ]
   },
@@ -209,19 +243,29 @@
       "Extracted 21-joint skeleton using Convolutional Pose Machines",
       "Achieved 91% accuracy with 3x performance improvement (6fps → 18fps)"
     ],
+    "responsibilities_ko": [
+      "OpenNI 깊이 스트림 초기화 및 해상도/FPS 설정",
+      "임계값, 노이즈 제거, 구멍 메우기를 적용한 깊이 기반 손 영역 분리",
+      "프레임 합성을 위한 RGB-Depth 알파 블렌딩 파이프라인 구현",
+      "Convolutional Pose Machines로 21개 관절 골격 추출",
+      "정확도 91% 달성, 처리 속도 3배 개선 (6fps → 18fps)"
+    ],
     "period": 2018,
     "detailedDescription": "Graduation thesis project using Intel RealSense SR300 RGB-D camera. Built real-time image processing pipeline targeting 30fps — depth-first segmentation, RGB-Depth alpha blending, and 21-joint skeleton extraction. Normalized joint distance data to handle varying camera distances, improving accuracy to 91%.",
+    "detailedDescription_ko": "Intel RealSense SR300 RGB-D 카메라를 사용한 졸업 논문 프로젝트입니다. 30fps를 목표로 깊이 기반 손 영역 분리, RGB-Depth 알파 블렌딩, 21개 관절 골격 추출로 이어지는 실시간 영상 처리 파이프라인을 만들었습니다. 카메라와의 거리가 달라져도 인식할 수 있도록 관절 간 거리 데이터를 정규화해 정확도를 91%까지 높였습니다.",
     "contribution": 85,
     "publication": "Inha University Computer Science Graduation Thesis",
     "demoVideo": "https://youtu.be/DJrrfm4XU_M",
     "images": [
       {
         "url": "images/projects/hand-gesture-ar/overview.png",
-        "caption": "Hand Gesture Recognition Overview"
+        "caption": "Hand Gesture Recognition Overview",
+        "caption_ko": "손 제스처 인식 개요"
       },
       {
         "url": "images/projects/hand-gesture-ar/process.png",
-        "caption": "Recognition Process Pipeline"
+        "caption": "Recognition Process Pipeline",
+        "caption_ko": "인식 처리 파이프라인"
       }
     ]
   },
@@ -244,27 +288,37 @@
       "Set up character, camera, and lighting",
       "Implemented 2.5D camera rotation and water shader effects"
     ],
+    "responsibilities_ko": [
+      "게임 시스템 설계 및 핵심 스크립트 구현",
+      "캐릭터, 카메라, 조명 세팅",
+      "2.5D 카메라 회전과 물 셰이더 효과 구현"
+    ],
     "period": 2018,
     "detailedDescription": "2D camera with 3D character placement — a 2.5D adventure game built in Unity. Includes scene transitions, inventory system, and simple puzzles. Capstone project for game programming coursework.",
+    "detailedDescription_ko": "2D 카메라에 3D 캐릭터를 배치한 2.5D 어드벤처 게임을 Unity로 만들었습니다. 장면 전환, 인벤토리 시스템, 간단한 퍼즐이 들어 있습니다. 게임 프로그래밍 수업의 기말 프로젝트입니다.",
     "contribution": 90,
     "publication": "Korea Information Processing Society 2018",
     "publicationUrl": "https://koreascience.kr/article/CFKO201835372171683.page",
     "images": [
       {
         "url": "images/projects/unity-2-5d-game/Water material과 Shader 소스코드.png",
-        "caption": "Water Material & Shader Source Code"
+        "caption": "Water Material & Shader Source Code",
+        "caption_ko": "물 머티리얼과 셰이더 소스 코드"
       },
       {
         "url": "images/projects/unity-2-5d-game/Bump map이 적용된 벽돌.png",
-        "caption": "Bump Map Applied to Bricks"
+        "caption": "Bump Map Applied to Bricks",
+        "caption_ko": "범프 맵을 적용한 벽돌"
       },
       {
         "url": "images/projects/unity-2-5d-game/Particle System을 통한 비 내리는 환경 구현.png",
-        "caption": "Rain Environment via Particle System"
+        "caption": "Rain Environment via Particle System",
+        "caption_ko": "파티클 시스템으로 만든 비 내리는 환경"
       },
       {
         "url": "images/projects/unity-2-5d-game/ Custom Shader를 통한 색의 가산효과.png",
-        "caption": "Additive Color Effect via Custom Shader"
+        "caption": "Additive Color Effect via Custom Shader",
+        "caption_ko": "커스텀 셰이더로 만든 색 가산 효과"
       }
     ]
   },
@@ -289,17 +343,25 @@
       "Built 1st/3rd person camera switching system",
       "Applied texture mapping and lighting effects"
     ],
+    "responsibilities_ko": [
+      "Catmull-Rom 스플라인 기반 트랙 곡선 생성",
+      "1인칭/3인칭 카메라 전환 시스템 구현",
+      "텍스처 매핑과 조명 효과 적용"
+    ],
     "period": 2017,
     "detailedDescription": "OpenGL-based 3D roller coaster track and camera system. Implemented curve interpolation, texture mapping, and lighting. C++ real-time rendering experience from computer graphics coursework.",
+    "detailedDescription_ko": "OpenGL로 3D 롤러코스터 트랙과 카메라 시스템을 만들었습니다. 곡선 보간, 텍스처 매핑, 조명을 구현하며 컴퓨터 그래픽스 수업에서 C++ 실시간 렌더링을 경험했습니다.",
     "contribution": 100,
     "images": [
       {
         "url": "images/projects/roller-coaster-simulation/first-person-view.png",
-        "caption": "First Person View"
+        "caption": "First Person View",
+        "caption_ko": "1인칭 시점"
       },
       {
         "url": "images/projects/roller-coaster-simulation/quard-view.png",
-        "caption": "Quad View"
+        "caption": "Quad View",
+        "caption_ko": "4분할 화면"
       }
     ]
   },
@@ -325,8 +387,14 @@
       "Organized mobile/server integration interfaces",
       "Implemented NFC payment, queue management, and lost child alerts"
     ],
+    "responsibilities_ko": [
+      "센서 데이터 수집 펌웨어와 통신 프로토콜 작성",
+      "모바일/서버 연동 인터페이스 정리",
+      "NFC 결제, 대기열 관리, 미아 알림 기능 구현"
+    ],
     "period": 2017,
     "detailedDescription": "Designed IoT solution to solve theme park problems — payment alerts, inefficient wait times, lost children. Used Low Power Wide Area (LPWA/LoRa) communication to connect small devices across large areas.",
+    "detailedDescription_ko": "결제 알림, 비효율적인 대기 시간, 미아 발생 같은 테마파크의 문제를 풀기 위한 IoT 솔루션을 설계했습니다. 넓은 공간에 흩어진 소형 기기를 연결하기 위해 저전력 광역 통신(LPWA/LoRa)을 사용했습니다.",
     "contribution": 80,
     "demoVideo": "https://www.youtube.com/watch?v=QNpT0Dq2218",
     "event": "SKT IoT Makerthon"
@@ -352,14 +420,22 @@
       "Implemented Google Map API for location-based content filtering",
       "Built tag and filter system for stray cat-related content"
     ],
+    "responsibilities_ko": [
+      "개인 기말 프로젝트로 웹 애플리케이션 전체 설계 및 개발",
+      "Flickr API를 연동해 사용자 위치 기반으로 고양이 사진 검색 및 표시",
+      "Google Maps API로 위치 기반 콘텐츠 필터링 구현",
+      "길고양이 관련 콘텐츠를 위한 태그 및 필터 시스템 구축"
+    ],
     "period": 2016,
     "detailedDescription": "Recently, terrible crimes against street cats have occurred in Korea. Street cats are driven to animal abuse because they carry germs. However, street cats can reduce their population through management, and if they maintain a clean environment through people's attention, they do not search for trash or carry diseases. With people's attention, street cats will become a small happiness of the day. This web service was planned to share the updates of cats near the residence using the Flickr API.",
+    "detailedDescription_ko": "최근 국내에서 길고양이를 대상으로 한 끔찍한 범죄가 잇따랐습니다. 길고양이는 병균을 옮긴다는 이유로 학대의 대상이 되곤 합니다. 하지만 관리를 통해 개체 수를 줄일 수 있고, 사람들의 관심으로 깨끗한 환경이 유지되면 쓰레기를 뒤지거나 병을 옮기지 않습니다. 사람들이 관심을 가진다면 길고양이는 하루의 작은 행복이 될 수 있습니다. 이 웹 서비스는 Flickr API로 사는 곳 근처 고양이들의 소식을 나누기 위해 기획했습니다.",
     "contribution": 100,
     "publication": "IT University of Copenhagen — Architectures and Frameworks for Web",
     "images": [
       {
         "url": "images/projects/cats-in-your-street/overview.png",
-        "caption": "Service Overview"
+        "caption": "Service Overview",
+        "caption_ko": "서비스 개요"
       }
     ]
   },
@@ -388,7 +464,15 @@
       "Maintained backward compatibility for Swift and Objective-C interoperability",
       "Collaborated with multiple product teams (Avatar, Voom, Messenger) on framework integration"
     ],
+    "responsibilities_ko": [
+      "LINE 미디어 제품을 지원하는 Yuki 카메라/그래픽스 프레임워크 팀 합류",
+      "CI/CD 파이프라인과 Jenkins 기반 사내 CocoaPods 프레임워크 배포 담당",
+      "프레임워크를 쓰는 여러 제품에서 발생한 복잡한 Objective-C 런타임 이슈 디버깅",
+      "Swift와 Objective-C 상호 운용을 위한 하위 호환성 유지",
+      "Avatar, Voom, Messenger 등 여러 제품 팀과 프레임워크 연동 협업"
+    ],
     "period": "2019 - 2022",
-    "detailedDescription": "Yuki is LINE's internal camera and graphics framework used across multiple products. Deep experience with framework-level development, Objective-C runtime debugging, and CI/CD automation. This role built strong foundations for later leading product teams that consumed the framework."
+    "detailedDescription": "Yuki is LINE's internal camera and graphics framework used across multiple products. Deep experience with framework-level development, Objective-C runtime debugging, and CI/CD automation. This role built strong foundations for later leading product teams that consumed the framework.",
+    "detailedDescription_ko": "Yuki는 여러 LINE 제품에서 쓰는 사내 카메라·그래픽스 프레임워크입니다. 프레임워크 수준의 개발, Objective-C 런타임 디버깅, CI/CD 자동화를 깊이 경험했습니다. 이 경험은 이후 이 프레임워크를 쓰는 제품 팀을 이끄는 탄탄한 기반이 되었습니다."
   }
 ]
