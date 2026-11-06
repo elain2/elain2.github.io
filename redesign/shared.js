@@ -6,6 +6,7 @@
 // Projects shown as large rows on the main page, in this order.
 // Everything else goes to the archive list.
 const FEATURED = [
+  'clipreef',
   'shortform-poc',
   'line-ai-dev2',
   'line-vision-pro',

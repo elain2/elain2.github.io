@@ -94,7 +94,8 @@ class DataStore {
       '08-roller-coaster-simulation.md',
       '09-theme-park-iot.md',
       '10-cats-in-your-street.md',
-      '11-line-yuki-framework.md'
+      '11-line-yuki-framework.md',
+      '12-clipreef.md'
     ];
   }
 

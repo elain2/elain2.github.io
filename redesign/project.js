@@ -16,6 +16,7 @@ const PROJECT_FILES = [
   '09-theme-park-iot.md',
   '10-cats-in-your-street.md',
   '11-line-yuki-framework.md',
+  '12-clipreef.md',
 ];
 
 const MERMAID_URL = 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';

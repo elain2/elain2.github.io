@@ -1,5 +1,73 @@
 [
   {
+    "id": "clipreef",
+    "title": "Clipreef — Natural-Language Video Search & Shortform Maker",
+    "title_ko": "Clipreef — 말로 찾는 영상 라이브러리와 숏폼 제작",
+    "category": "macOS Development",
+    "thumbnail": "images/projects/clipreef/01-library.jpg",
+    "tags": [
+      "macOS",
+      "Swift",
+      "SwiftUI",
+      "AVFoundation",
+      "Gemini",
+      "StoreKit 2",
+      "TypeScript",
+      "SQLite"
+    ],
+    "description": "A macOS app that lets you search your own video library in plain language and turns the matches into 9:16 shortform videos",
+    "description_ko": "내 영상 라이브러리를 말로 검색하고, 찾은 장면으로 9:16 숏폼까지 바로 만들어 주는 macOS 앱",
+    "role": "Solo Developer (Planning · Design · Development · Release)",
+    "responsibilities": [
+      "Built the whole product alone: planning, design, development, in-app purchases, and App Store release",
+      "Natural-language video search: frames are sampled at intervals, tagged and described by AI, then scored and grouped into timecoded ranges, with AI query expansion for similar phrasings",
+      "On-device visual highlight analysis that scores motion, colour and subjects, with pause and resume and no credits needed",
+      "Automatic shortform assembly: from a one-line prompt or script, AI builds the scene list, cuts at high-scoring moments, reframes to 9:16 and adds music before export",
+      "Shortform idea suggestions from the library, AI-generated background music, and duplicate/re-encoded video cleanup before indexing",
+      "Credit proxy backend (TypeScript, Vercel, Upstash Redis) with StoreKit 2 receipt verification, credit charging and refunds, and App Attest",
+      "UI-free SwiftPM core shared by the macOS app, iOS/iPadOS build and CLI tools (~18k lines of Swift), covered by 400+ XCTest cases plus XCUITest and CLI e2e tests"
+    ],
+    "responsibilities_ko": [
+      "기획·디자인·개발·인앱결제·App Store 배포까지 1인으로 진행",
+      "자연어 영상 검색: 일정 간격으로 뽑은 프레임에 AI가 라벨·태그·설명을 붙이고, 검색 결과를 점수화해 타임코드 구간으로 묶어 보여줌. AI 질의 확장으로 비슷한 표현까지 검색",
+      "움직임·색감·피사체를 기준으로 \"볼만한 구간\"을 기기 안에서 점수화하는 하이라이트 분석 (크레딧 불필요, 중지·이어하기 지원)",
+      "숏폼 자동 조립: 한 문장 지시나 스크립트로 AI가 장면 목록을 구성하고, 하이라이트 지점에 맞춰 컷을 자르고, 9:16 리프레임과 음악까지 붙여 내보냄",
+      "라이브러리 기반 숏폼 아이디어 추천, AI 배경음악 생성, 색인 전 겹치는 영상(동일·재인코딩) 정리",
+      "TypeScript·Vercel·Upstash Redis 크레딧 프록시 서버: StoreKit 2 영수증 검증, 크레딧 차감·환불, App Attest 정품 확인",
+      "macOS 앱·iOS/iPadOS 빌드·CLI가 함께 쓰는 UI 없는 SwiftPM 코어 (Swift 약 1.8만 줄), XCTest 400개 이상과 XCUITest·CLI e2e 테스트"
+    ],
+    "period": "2026.10 - Present",
+    "detailedDescription": "After a few hundred DJI and action-cam clips pile up, just finding \"where was that shot?\" can take hours. Making shortform videos adds another problem: you cut and save highlight ranges from each clip, the ranges overlap, and nearly identical videos keep piling up until it is hard to tell which is the original and what has already been used. I ran into this myself while working as a freediving instructor, so I built a tool that flips the workflow: keep only the originals, and search and pull out what you need when you need it. Search for a sentence like \"descending shot\" or \"drone shot at sunset\", and Clipreef finds that range in hours of footage and assembles it into a 9:16 shortform. The originals never leave your Mac; AI indexes the content to automate search and shortform sourcing. It is in TestFlight beta (build 14) and being prepared for the Mac App Store.",
+    "detailedDescription_ko": "DJI·액션캠으로 찍은 영상이 수백 개 쌓이면 \"그 장면이 어디 있었지?\"를 찾는 데만 몇 시간이 걸립니다. 숏폼을 만들다 보면 문제가 하나 더 생깁니다. 영상마다 하이라이트 구간을 잘라 따로 저장하게 되는데, 잘라 둔 구간끼리 겹치다 보니 거의 같은 영상이 계속 쌓이고, 무엇이 원본이고 무엇을 이미 썼는지 알기 어려워집니다. 프리다이빙 강사로 일하며 직접 겪은 문제라서, 하이라이트를 미리 잘라 두는 대신 원본만 두고 필요할 때 검색해서 꺼내 쓰는 방식으로 바꾸는 도구를 만들었습니다. \"하강하는 장면\", \"노을 질 때 드론샷\"처럼 문장으로 찾으면 몇 시간 분량의 원본에서 그 구간을 찾아 9:16 숏폼으로 조립해 줍니다. 원본은 내 Mac에만 두고, AI가 영상 내용을 색인해 검색과 숏폼 소스 추출을 자동화합니다. 현재 TestFlight 베타(빌드 14) 배포 중이며 Mac App Store 출시를 준비하고 있습니다.",
+    "images": [
+      {
+        "url": "images/projects/clipreef/01-library.jpg",
+        "caption": "Library — all videos stay on this Mac",
+        "caption_ko": "라이브러리 — 원본은 이 Mac에만 있습니다"
+      },
+      {
+        "url": "images/projects/clipreef/02-search.jpg",
+        "caption": "Natural-language search with timecoded results",
+        "caption_ko": "자연어 검색과 타임코드 구간 결과"
+      },
+      {
+        "url": "images/projects/clipreef/03-highlight.jpg",
+        "caption": "Highlight candidates and AI-tagged keyframes for one clip",
+        "caption_ko": "한 영상의 하이라이트 후보 구간과 AI 태깅된 키프레임"
+      },
+      {
+        "url": "images/projects/clipreef/04-script-shortform.jpg",
+        "caption": "Shortform assembled from a script",
+        "caption_ko": "스크립트로 조립한 숏폼"
+      },
+      {
+        "url": "images/projects/clipreef/05-shortform-edit.jpg",
+        "caption": "Refining a shortform in plain words, with music and transition options",
+        "caption_ko": "말로 다듬기, 음원과 화면 전환 옵션으로 숏폼 마무리"
+      }
+    ]
+  },
+  {
     "id": "shortform-poc",
     "title": "LLM-Powered Shortform Video Generator PoC",
     "title_ko": "LLM 기반 숏폼 자동 제작 PoC",
